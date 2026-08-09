@@ -73,20 +73,20 @@
     },
     {
       "id": 5,
-      "modelo": "MacBook Air M1",
-      "marca": "Apple",
-      "procesador": "Apple M1 8-core",
-      "ram": "8 GB Unified",
-      "almacenamiento": "256 GB SSD",
-      "pantalla": "13.3\" Retina",
+      "modelo": "Inspiron 15",
+      "marca": "Dell",
+      "procesador": "AMD Ryzen 5 7520U",
+      "ram": "8 GB DDR5",
+      "almacenamiento": "512 GB SSD",
+      "pantalla": "15\" FullHD",
       "estado": "Excelente",
-      "precio": 650000,
-      "garantia": "3 meses",
+      "precio": 700000,
+      "garantia": "30 días",
       "badges": [
         "recomendada"
       ],
       "color": "#888888",
-      "imagenURL": ""
+      "imagenURL": "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-inspiron-15-1786314589741.heic"
     },
     {
       "id": 6,
