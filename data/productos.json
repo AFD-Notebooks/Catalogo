@@ -15,7 +15,9 @@
       "estado": "Excelente",
       "precio": 320000,
       "garantia": "3 meses",
-      "badges": ["recomendada"],
+      "badges": [
+        "recomendada"
+      ],
       "color": "#f07020",
       "imagenURL": ""
     },
@@ -30,7 +32,9 @@
       "estado": "Muy bueno",
       "precio": 220000,
       "garantia": "3 meses",
-      "badges": ["oferta"],
+      "badges": [
+        "oferta"
+      ],
       "color": "#e84040",
       "imagenURL": ""
     },
@@ -60,7 +64,10 @@
       "estado": "Muy bueno",
       "precio": 480000,
       "garantia": "3 meses",
-      "badges": ["gaming", "recomendada"],
+      "badges": [
+        "gaming",
+        "recomendada"
+      ],
       "color": "#f5b942",
       "imagenURL": ""
     },
@@ -75,7 +82,9 @@
       "estado": "Excelente",
       "precio": 650000,
       "garantia": "3 meses",
-      "badges": ["recomendada"],
+      "badges": [
+        "recomendada"
+      ],
       "color": "#888888",
       "imagenURL": ""
     },
@@ -90,9 +99,26 @@
       "estado": "Muy bueno",
       "precio": 295000,
       "garantia": "3 meses",
-      "badges": ["oferta"],
+      "badges": [
+        "oferta"
+      ],
       "color": "#3d1040",
       "imagenURL": ""
+    },
+    {
+      "id": 7,
+      "modelo": "Aspire",
+      "marca": "Acer",
+      "procesador": "Intel Core I7 11va",
+      "ram": "16GB",
+      "almacenamiento": "512GB",
+      "pantalla": "15,6\" Full HD IPS",
+      "estado": "Excelente",
+      "precio": 870000,
+      "garantia": "3 meses",
+      "badges": [],
+      "color": "#f07020",
+      "imagenURL": "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-1786312091684.jpeg"
     }
   ]
 }
