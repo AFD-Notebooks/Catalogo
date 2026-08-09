@@ -90,20 +90,21 @@
     },
     {
       "id": 6,
-      "modelo": "EliteBook 840 G7",
-      "marca": "HP",
-      "procesador": "Intel Core i5-10310U",
-      "ram": "16 GB DDR4",
+      "modelo": "Swift",
+      "marca": "Acer",
+      "procesador": "Intel Core i7 EVO 11va Generación",
+      "ram": "8 GB DDR4",
       "almacenamiento": "256 GB SSD",
       "pantalla": "14\" FHD IPS",
-      "estado": "Muy bueno",
-      "precio": 295000,
-      "garantia": "3 meses",
+      "estado": "Excelente",
+      "precio": 770000,
+      "garantia": "30 días",
       "badges": [
+        "recomendada",
         "oferta"
       ],
       "color": "#3d1040",
-      "imagenURL": ""
+      "imagenURL": "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-swift-1786314325110.heic"
     },
     {
       "id": 7,
