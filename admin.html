@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de stock — AFD Notebooks</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/admin.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.jpg" alt="AFD Notebooks logo" style="height:38px;width:auto;object-fit:contain;" />
+      <span class="nav-brand">AFD <span>notebooks</span></span>
+    </a>
+    <div class="nav-right">
+      <button class="btn-theme" onclick="toggleTheme()" aria-label="Cambiar modo oscuro/claro" title="Cambiar tema">
+        <svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      <a href="index.html" class="btn-secondary" style="padding:8px 18px;">Ver sitio</a>
+    </div>
+  </div>
+</nav>
+
+<div class="admin-wrap">
+  <div class="admin-header">
+    <h1>Panel de <strong>stock</strong></h1>
+  </div>
+
+  <!-- FORM DE CONEXIÓN -->
+  <div class="admin-card" id="connectForm">
+    <h2>Conectate a tu repositorio de GitHub</h2>
+    <p class="hint">
+      Esta página edita directamente <code>data/productos.json</code> en tu repositorio de GitHub
+      (donde está publicado el sitio) usando la API de GitHub. Necesitás un <strong>Personal Access Token</strong>
+      con permiso de lectura y escritura sobre "Contents" de ESE repositorio únicamente.<br><br>
+      El token se guarda solo en este navegador (nunca se envía a ningún otro lado). Usá esta página
+      solo en dispositivos de confianza, y si sospechás que se filtró, revocalo desde GitHub.
+    </p>
+    <div class="field-grid">
+      <div class="field">
+        <label for="cfgOwner">Usuario u organización de GitHub</label>
+        <input type="text" id="cfgOwner" placeholder="ej: juliana-afd" />
+      </div>
+      <div class="field">
+        <label for="cfgRepo">Nombre del repositorio</label>
+        <input type="text" id="cfgRepo" placeholder="ej: afd-notebooks" />
+      </div>
+      <div class="field">
+        <label for="cfgBranch">Rama</label>
+        <input type="text" id="cfgBranch" placeholder="main" value="main" />
+      </div>
+      <div class="field">
+        <label for="cfgToken">Personal Access Token</label>
+        <input type="password" id="cfgToken" placeholder="ghp_... o github_pat_..." />
+      </div>
+      <div class="field">
+        <label for="cfgJsonPath">Ruta del archivo de stock</label>
+        <input type="text" id="cfgJsonPath" value="data/productos.json" />
+      </div>
+      <div class="field">
+        <label for="cfgImagesPath">Carpeta para fotos</label>
+        <input type="text" id="cfgImagesPath" value="images" />
+      </div>
+    </div>
+    <button class="btn btn-accent" id="connectBtn" onclick="connect()">Conectar</button>
+  </div>
+
+  <!-- PANEL CONECTADO -->
+  <div id="connectedPanel" style="display:none">
+    <div class="admin-card" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+      <div>
+        <div style="font-size:13px; color:var(--text2);">Conectado a</div>
+        <div id="repoLabel" style="font-weight:500;"></div>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-outline" onclick="reloadFromGitHub()">Recargar</button>
+        <button class="btn btn-outline" onclick="disconnect()">Cerrar sesión</button>
+      </div>
+    </div>
+
+    <div class="admin-card">
+      <h2>Datos de contacto del sitio</h2>
+      <p class="hint">Esto actualiza todos los botones de WhatsApp e Instagram del sitio, en un solo lugar.</p>
+      <div class="field-grid">
+        <div class="field">
+          <label for="waNumberInput">Número de WhatsApp (con código de país, sin + ni espacios)</label>
+          <input type="text" id="waNumberInput" placeholder="5493511234567" />
+        </div>
+        <div class="field">
+          <label for="instagramInput">Usuario de Instagram (sin @)</label>
+          <input type="text" id="instagramInput" placeholder="afd.notebooks" />
+        </div>
+      </div>
+      <button class="btn btn-accent" onclick="saveGeneralConfig()">Guardar datos de contacto</button>
+    </div>
+
+    <div class="admin-card">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
+        <h2 style="margin:0;">Notebooks en stock</h2>
+        <button class="btn btn-accent" onclick="openProductModal()">+ Agregar notebook</button>
+      </div>
+      <div class="product-list" id="productList"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL PRODUCTO -->
+<div class="modal-backdrop" id="productModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="modalTitle">Agregar notebook</h3>
+      <button class="modal-close" onclick="closeProductModal()">×</button>
+    </div>
+    <div class="field-grid">
+      <div class="field"><label>Marca</label><input type="text" id="fMarca" placeholder="Lenovo" /></div>
+      <div class="field"><label>Modelo</label><input type="text" id="fModelo" placeholder="ThinkPad E14 Gen 3" /></div>
+      <div class="field full"><label>Procesador</label><input type="text" id="fProcesador" placeholder="AMD Ryzen 5 5500U" /></div>
+      <div class="field"><label>RAM</label><input type="text" id="fRam" placeholder="16 GB DDR4" /></div>
+      <div class="field"><label>Almacenamiento</label><input type="text" id="fAlmacenamiento" placeholder="512 GB SSD" /></div>
+      <div class="field"><label>Pantalla</label><input type="text" id="fPantalla" placeholder='14" FHD IPS' /></div>
+      <div class="field">
+        <label>Estado</label>
+        <select id="fEstado">
+          <option>Excelente</option>
+          <option>Muy bueno</option>
+          <option>Bueno</option>
+          <option>Regular</option>
+        </select>
+      </div>
+      <div class="field"><label>Precio (ARS)</label><input type="number" id="fPrecio" placeholder="320000" /></div>
+      <div class="field"><label>Garantía</label><input type="text" id="fGarantia" placeholder="3 meses" value="3 meses" /></div>
+      <div class="field">
+        <label>Color de respaldo (si no hay foto)</label>
+        <input type="color" id="fColor" value="#f07020" />
+      </div>
+      <div class="field full">
+        <label>Etiquetas</label>
+        <div class="checkbox-row">
+          <label><input type="checkbox" id="fBadge_recomendada" /> ⭐ Recomendada</label>
+          <label><input type="checkbox" id="fBadge_oferta" /> 🔥 Oferta</label>
+          <label><input type="checkbox" id="fBadge_gaming" /> 🎮 Gaming</label>
+        </div>
+      </div>
+      <div class="field full">
+        <label>Foto (subir archivo — reemplaza la URL de abajo)</label>
+        <input type="file" id="fImagenFile" accept="image/*" />
+      </div>
+      <div class="field full">
+        <label>o URL de imagen externa</label>
+        <input type="url" id="fImagenURL" placeholder="https://..." />
+        <div id="imagePreviewWrap"></div>
+      </div>
+    </div>
+    <button class="btn btn-accent" id="saveProductBtn" onclick="saveProductFromModal()">Guardar</button>
+    <button class="btn btn-outline" onclick="closeProductModal()">Cancelar</button>
+  </div>
+</div>
+
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script src="assets/theme.js"></script>
+<script src="assets/admin.js"></script>
+</body>
+</html>

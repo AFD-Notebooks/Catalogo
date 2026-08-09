@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFD Notebooks — Notebooks usadas, revisadas y con garantía</title>
+  <meta name="description" content="Notebooks usadas de calidad, revisadas técnicamente y con garantía. Cordoba, Argentina." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú de navegación">
+  <div class="mobile-menu-head">
+    <div class="nav-logo">
+      <img src="images/logo.jpg" alt="AFD Notebooks logo" style="height:38px;width:auto;object-fit:contain;" />
+      <span style="font-weight:500">AFD Notebooks</span>
+    </div>
+    <button class="close-btn" onclick="closeMobileMenu()" aria-label="Cerrar menú">×</button>
+  </div>
+  <a href="#catalogo" onclick="closeMobileMenu()">Catálogo</a>
+  <a href="#por-que" onclick="closeMobileMenu()">¿Por qué AFD?</a>
+  <a href="#como-trabajamos" onclick="closeMobileMenu()">Cómo trabajamos</a>
+  <a href="#contacto" onclick="closeMobileMenu()">Contacto</a>
+  <div style="margin-top:auto">
+    <a href="#" data-wa-generic="1" target="_blank" class="btn-wa" style="display:inline-flex;margin-top:1rem">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Consultar por WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="AFD Notebooks inicio">
+      <img src="images/logo.jpg" alt="AFD Notebooks logo" style="height:38px;width:auto;object-fit:contain;" />
+      <span class="nav-brand">AFD <span>notebooks</span></span>
+    </a>
+    <div class="nav-links" role="navigation" aria-label="Navegación principal">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#por-que">¿Por qué AFD?</a>
+      <a href="#como-trabajamos">Proceso</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="nav-right">
+      <button class="btn-theme" onclick="toggleTheme()" aria-label="Cambiar modo oscuro/claro" title="Cambiar tema">
+        <svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      <a href="#" data-wa-generic="1" target="_blank" class="btn-wa" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        WhatsApp
+      </a>
+      <button class="burger" onclick="openMobileMenu()" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section>
+  <div class="hero">
+    <div>
+      <div class="hero-eyebrow fade-up">Córdoba, Argentina</div>
+      <h1 class="fade-up delay-1">
+        Notebooks usadas<br /><strong>de verdad revisadas.</strong>
+      </h1>
+      <p class="fade-up delay-2">
+        Cada equipo pasa por revisión técnica antes de salir. Formateo, limpieza, diagnóstico y garantía. No vendemos notebooks, construimos confianza.
+      </p>
+      <div class="hero-ctas fade-up delay-3">
+        <a href="#catalogo" class="btn-primary">
+          Ver catálogo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#por-que" class="btn-secondary">¿Por qué AFD?</a>
+      </div>
+    </div>
+    <div class="hero-visual fade-up delay-2">
+      <div class="hero-graphic">
+        <div class="pills-row">
+          <div class="pill-bar" style="background:#f5b942"></div>
+          <div class="pill-bar" style="background:#f07020"></div>
+          <div class="pill-bar" style="background:#e84040"></div>
+          <div class="pill-bar" style="background:#c02060"></div>
+          <div class="pill-bar" style="background:#3d1040"></div>
+        </div>
+        <div class="pills-row">
+          <div class="pill-bar" style="background:#f07020;opacity:.5"></div>
+          <div class="pill-bar" style="background:#e84040;opacity:.5"></div>
+          <div class="pill-bar" style="background:#c02060;opacity:.5"></div>
+          <div class="pill-bar" style="background:#3d1040;opacity:.5"></div>
+        </div>
+        <div class="stats-row">
+          <div class="stat-box">
+            <div class="num">+50</div>
+            <div class="lbl">equipos vendidos</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">100%</div>
+            <div class="lbl">revisados técnicamente</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">3</div>
+            <div class="lbl">meses de garantía</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <div class="trust-label">Garantía incluida</div>
+        <div class="trust-sub">3 meses en cada equipo</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div>
+        <div class="trust-label">Revisión técnica</div>
+        <div class="trust-sub">Formateadas y diagnosticadas</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/></svg>
+      </div>
+      <div>
+        <div class="trust-label">Atención directa</div>
+        <div class="trust-sub">Hablás con el equipo real</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div>
+        <div class="trust-label">Transparencia total</div>
+        <div class="trust-sub">Estado real del equipo</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CATÁLOGO -->
+<section class="section" id="catalogo">
+  <div class="section-header">
+    <div class="section-label">Catálogo</div>
+    <h2 class="section-title">Equipos <strong>disponibles ahora</strong></h2>
+  </div>
+
+  <div class="filters">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="search-input" id="searchInput" placeholder="Buscar por modelo, procesador, RAM..." aria-label="Buscar notebooks" />
+    </div>
+    <div class="filter-btns" role="group" aria-label="Filtrar por categoría">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="recomendada">Recomendadas</button>
+      <button class="filter-btn" data-filter="oferta">Ofertas</button>
+      <button class="filter-btn" data-filter="gaming">Gaming</button>
+    </div>
+  </div>
+
+  <div class="catalog-grid" id="catalogGrid">
+    <!-- products injected by JS -->
+  </div>
+</section>
+
+<!-- POR QUÉ AFD -->
+<section class="section" id="por-que" style="background: var(--bg2); max-width:100%; padding: 5rem 0;">
+  <div style="max-width:1180px; margin:0 auto; padding: 0 1.5rem;">
+    <div class="section-header">
+      <div class="section-label">Por qué elegirnos</div>
+      <h2 class="section-title">Comprás con <strong>confianza real</strong></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="why-title">Garantía real</div>
+        <div class="why-text">Cada notebook tiene 3 meses de garantía. Si hay un problema, lo resolvemos. Sin letra chica, sin vueltas.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="why-title">Revisión técnica profesional</div>
+        <div class="why-text">Pinu revisa cada equipo: formato, diagnóstico de hardware, testeo de batería y limpieza interna. Nada sale sin pasar el control.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="why-title">Trato humano</div>
+        <div class="why-text">Somos un equipo pequeño y eso se nota. Te asesoramos de verdad según lo que necesitás, no lo que es más caro.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="why-title">Estado honesto</div>
+        <div class="why-text">Describimos cada equipo tal como es. Rayones, detalles estéticos, antigüedad. La foto que ves es la notebook que recibís.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="why-title">Stock actualizado</div>
+        <div class="why-text">Manu mantiene el catálogo al día. Lo que ves disponible, está disponible. Sin sorpresas ni equipos fantasma.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div class="why-title">Precio justo</div>
+        <div class="why-text">Estudiamos el mercado para que pagues lo que vale. Ni inflado ni regalado — el precio correcto para el equipo correcto.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="section" id="como-trabajamos">
+  <div class="section-header">
+    <div class="section-label">Proceso</div>
+    <h2 class="section-title">Cómo <strong>trabajamos</strong></h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">01 — Compra</div>
+      <div class="step-title">Selección del equipo</div>
+      <div class="step-text">Manu busca y adquiere equipos con historial confiable, chequeando procedencia y condición general antes de incorporarlos.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02 — Técnico</div>
+      <div class="step-title">Revisión con Pinu</div>
+      <div class="step-text">Cada notebook pasa por diagnóstico completo: hardware, batería, conectividad, pantalla. Se formatea y deja lista para uso.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03 — Catálogo</div>
+      <div class="step-title">Publicación transparente</div>
+      <div class="step-text">Juan Cruz documenta el estado real, saca fotos honestas y describe las especificaciones exactas. Lo que ves es lo que hay.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04 — Venta</div>
+      <div class="step-title">Asesoramiento y entrega</div>
+      <div class="step-text">Te orientamos para elegir el equipo que se adapta a tus necesidades y presupuesto. Entregamos con garantía incluida.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="section" style="padding-top:0">
+  <div class="section-header">
+    <div class="section-label">Clientes</div>
+    <h2 class="section-title">Lo que dicen <strong>quienes compraron</strong></h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Compré una notebook para estudiar y quedé muy conforme. Me asesoraron bien, el equipo llegó impecable y con todo instalado. Muy buena experiencia."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">SL</div>
+        <div>
+          <div class="testi-name">Sofía L.</div>
+          <div class="testi-city">Córdoba Capital</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Lo que más me gustó es que fueron honestos sobre el estado del equipo. Nada de sorpresas. La garantía de 3 meses te da mucha tranquilidad."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">MR</div>
+        <div>
+          <div class="testi-name">Matías R.</div>
+          <div class="testi-city">Villa Carlos Paz</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Ya compré dos notebooks con AFD. La segunda incluso mejor que la primera. Son de confiar, rápidos para responder y muy prolijos en todo."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">LC</div>
+        <div>
+          <div class="testi-name">Lucas C.</div>
+          <div class="testi-city">Río Cuarto</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section" id="contacto" style="background: var(--bg2); max-width:100%; padding: 5rem 0;">
+  <div style="max-width:1180px; margin:0 auto; padding: 0 1.5rem;">
+    <div class="section-header">
+      <div class="section-label">Contacto</div>
+      <h2 class="section-title">¿Tenés alguna <strong>consulta?</strong></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Hablemos directamente.</h3>
+        <p>Somos tres personas reales respondiendo. Consultanos por el equipo que te interesa, pedinos asesoramiento o preguntanos lo que quieras.</p>
+        <div class="contact-channels">
+          <a href="#" data-wa-generic="1" target="_blank" rel="noopener" class="channel-link">
+            <div class="ch-icon ch-wa">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            </div>
+            <div>
+              <div class="ch-label">WhatsApp</div>
+              <div class="ch-sub">Respuesta rápida · Lunes a Sábado</div>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="margin-left:auto; color:var(--text3)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#" data-ig-link="1" target="_blank" rel="noopener" class="channel-link">
+            <div class="ch-icon ch-ig">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div>
+              <div class="ch-label">Instagram</div>
+              <div class="ch-sub" id="igHandle">@afd.notebooks</div>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="margin-left:auto; color:var(--text3)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h4>Consultá por un equipo</h4>
+        <div class="form-group">
+          <label for="cName">Tu nombre</label>
+          <input type="text" id="cName" class="form-input" placeholder="Ej: Juliana" autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="cMsg">¿Qué estás buscando?</label>
+          <textarea id="cMsg" class="form-input" placeholder="Ej: Busco una notebook para diseño, presupuesto $300k..." rows="4"></textarea>
+        </div>
+        <button class="form-submit" onclick="sendWhatsAppForm()">Enviar consulta por WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="images/logo.jpg" alt="AFD Notebooks logo" style="height:28px;width:auto;object-fit:contain;" />
+      <span style="font-size:14px; font-weight:500">AFD Notebooks</span>
+    </div>
+    <div class="footer-links">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#por-que">Por qué AFD</a>
+      <a href="#como-trabajamos">Proceso</a>
+      <a href="#" data-ig-link="1" target="_blank" rel="noopener">Instagram</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="footer-copy">© <span id="footerYear">2026</span> AFD Notebooks · Córdoba, Argentina · Hecho con ❤️ por el equipo</div>
+  </div>
+</footer>
+
+
+<script src="assets/theme.js"></script>
+<script src="assets/catalog.js"></script>
+</body>
+</html>

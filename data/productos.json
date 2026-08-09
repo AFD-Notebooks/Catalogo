@@ -1,0 +1,98 @@
+{
+  "config": {
+    "waNumber": "5493514000000",
+    "instagram": "afd.notebooks"
+  },
+  "productos": [
+    {
+      "id": 1,
+      "modelo": "ThinkPad E14 Gen 3",
+      "marca": "Lenovo",
+      "procesador": "AMD Ryzen 5 5500U",
+      "ram": "16 GB DDR4",
+      "almacenamiento": "512 GB SSD",
+      "pantalla": "14\" FHD IPS",
+      "estado": "Excelente",
+      "precio": 320000,
+      "garantia": "3 meses",
+      "badges": ["recomendada"],
+      "color": "#f07020",
+      "imagenURL": ""
+    },
+    {
+      "id": 2,
+      "modelo": "Inspiron 15 3000",
+      "marca": "Dell",
+      "procesador": "Intel Core i5-1135G7",
+      "ram": "8 GB DDR4",
+      "almacenamiento": "256 GB SSD",
+      "pantalla": "15.6\" FHD",
+      "estado": "Muy bueno",
+      "precio": 220000,
+      "garantia": "3 meses",
+      "badges": ["oferta"],
+      "color": "#e84040",
+      "imagenURL": ""
+    },
+    {
+      "id": 3,
+      "modelo": "VivoBook 15 X513",
+      "marca": "Asus",
+      "procesador": "Intel Core i3-1115G4",
+      "ram": "8 GB DDR4",
+      "almacenamiento": "256 GB SSD",
+      "pantalla": "15.6\" FHD",
+      "estado": "Bueno",
+      "precio": 175000,
+      "garantia": "3 meses",
+      "badges": [],
+      "color": "#c02060",
+      "imagenURL": ""
+    },
+    {
+      "id": 4,
+      "modelo": "Pavilion Gaming 15",
+      "marca": "HP",
+      "procesador": "AMD Ryzen 5 5600H + GTX 1650",
+      "ram": "16 GB DDR4",
+      "almacenamiento": "512 GB SSD",
+      "pantalla": "15.6\" FHD 144Hz",
+      "estado": "Muy bueno",
+      "precio": 480000,
+      "garantia": "3 meses",
+      "badges": ["gaming", "recomendada"],
+      "color": "#f5b942",
+      "imagenURL": ""
+    },
+    {
+      "id": 5,
+      "modelo": "MacBook Air M1",
+      "marca": "Apple",
+      "procesador": "Apple M1 8-core",
+      "ram": "8 GB Unified",
+      "almacenamiento": "256 GB SSD",
+      "pantalla": "13.3\" Retina",
+      "estado": "Excelente",
+      "precio": 650000,
+      "garantia": "3 meses",
+      "badges": ["recomendada"],
+      "color": "#888888",
+      "imagenURL": ""
+    },
+    {
+      "id": 6,
+      "modelo": "EliteBook 840 G7",
+      "marca": "HP",
+      "procesador": "Intel Core i5-10310U",
+      "ram": "16 GB DDR4",
+      "almacenamiento": "256 GB SSD",
+      "pantalla": "14\" FHD IPS",
+      "estado": "Muy bueno",
+      "precio": 295000,
+      "garantia": "3 meses",
+      "badges": ["oferta"],
+      "color": "#3d1040",
+      "imagenURL": ""
+    }
+  ]
+}
