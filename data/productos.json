@@ -6,20 +6,20 @@
   "productos": [
     {
       "id": 1,
-      "modelo": "ThinkPad E14 Gen 3",
-      "marca": "Lenovo",
-      "procesador": "AMD Ryzen 5 5500U",
-      "ram": "16 GB DDR4",
-      "almacenamiento": "512 GB SSD",
-      "pantalla": "14\" FHD IPS",
-      "estado": "Excelente",
-      "precio": 320000,
-      "garantia": "3 meses",
+      "modelo": "14-dq2",
+      "marca": "Hp",
+      "procesador": "Intel Core i5 1135G7",
+      "ram": "8 GB DDR4",
+      "almacenamiento": "256 GB SSD",
+      "pantalla": "14\" FHD",
+      "estado": "Muy bueno",
+      "precio": 580000,
+      "garantia": "30 días",
       "badges": [
         "recomendada"
       ],
       "color": "#f07020",
-      "imagenURL": ""
+      "imagenURL": "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-14-dq2-1786403860870.jpg"
     },
     {
       "id": 2,
