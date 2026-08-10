@@ -40,18 +40,18 @@
     },
     {
       "id": 3,
-      "modelo": "VivoBook 15 X513",
-      "marca": "Asus",
-      "procesador": "Intel Core i3-1115G4",
-      "ram": "8 GB DDR4",
-      "almacenamiento": "256 GB SSD",
+      "modelo": "ASPIRE 3",
+      "marca": "Acer",
+      "procesador": "Intel Core i5 135U",
+      "ram": "8 GB DDR5",
+      "almacenamiento": "512 GB SSD",
       "pantalla": "15.6\" FHD",
-      "estado": "Bueno",
-      "precio": 175000,
-      "garantia": "3 meses",
+      "estado": "Excelente",
+      "precio": 690000,
+      "garantia": "30 días",
       "badges": [],
       "color": "#c02060",
-      "imagenURL": ""
+      "imagenURL": "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-3-1786403703690.jpg"
     },
     {
       "id": 4,
