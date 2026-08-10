@@ -23,15 +23,15 @@
     },
     {
       "id": 2,
-      "modelo": "Inspiron 15 3000",
-      "marca": "Dell",
-      "procesador": "Intel Core i5-1135G7",
-      "ram": "8 GB DDR4",
+      "modelo": "15 -fc00101a",
+      "marca": "Hp",
+      "procesador": "AMD Ryzen 5 7520U",
+      "ram": "8 GB DDR5",
       "almacenamiento": "256 GB SSD",
       "pantalla": "15.6\" FHD",
       "estado": "Muy bueno",
-      "precio": 220000,
-      "garantia": "3 meses",
+      "precio": 670000,
+      "garantia": "30 días",
       "badges": [
         "oferta"
       ],
