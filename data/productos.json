@@ -55,18 +55,18 @@
     },
     {
       "id": 4,
-      "modelo": "Pavilion Gaming 15",
-      "marca": "HP",
-      "procesador": "AMD Ryzen 5 5600H + GTX 1650",
-      "ram": "16 GB DDR4",
+      "modelo": "Inspiron 15",
+      "marca": "Dell",
+      "procesador": "AMD Ryzen 5 7520U",
+      "ram": "8 GB DDR5",
       "almacenamiento": "512 GB SSD",
-      "pantalla": "15.6\" FHD 144Hz",
-      "estado": "Muy bueno",
-      "precio": 480000,
-      "garantia": "3 meses",
+      "pantalla": "15\" FHD",
+      "estado": "Excelente",
+      "precio": 680000,
+      "garantia": "30 días",
       "badges": [
-        "gaming",
-        "recomendada"
+        "recomendada",
+        "gaming"
       ],
       "color": "#f5b942",
       "imagenURL": ""
