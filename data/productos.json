@@ -4,14 +4,17 @@
       {
         "id": "principal",
         "label": "Ventas",
-        "numero": "5493516193366",
-        "predeterminado": true
+        "numero": "5493516193366"
       },
       {
         "id": "rrkkp3o",
         "label": "Francisco",
-        "numero": "5493515403265",
-        "predeterminado": false
+        "numero": "5493515403265"
+      },
+      {
+        "id": "rgeflxf",
+        "label": "Manuel",
+        "numero": "5493517500595"
       }
     ],
     "instagram": "afd.notebooks",
