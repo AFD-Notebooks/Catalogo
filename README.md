@@ -89,7 +89,7 @@ archivo, en github.com) o desde tu computadora. Es un JSON con esta forma:
 {
   "config": {
     "whatsapp": [
-      { "id": "principal", "label": "Ventas", "numero": "5493511234567", "predeterminado": true }
+      { "id": "principal", "label": "Ventas", "numero": "5493511234567" }
     ],
     "instagram": "afd.notebooks",
     "garantiaDefault": "1 mes"
@@ -117,9 +117,12 @@ archivo, en github.com) o desde tu computadora. Es un JSON con esta forma:
 ```
 
 - `config.whatsapp` es una lista de números (podés cargar varios, por ejemplo
-  "Ventas" y "Soporte"). El que tenga `"predeterminado": true` es el que se usa
-  en los botones rápidos del sitio (nav, hero, "Consultar" de cada producto).
-  Todos los números de la lista aparecen como opciones en la sección Contacto.
+  "Ventas" y "Soporte"). Todos aparecen siempre como opciones de contacto: en
+  la sección Contacto se listan todos, y en los botones rápidos del sitio
+  (nav, hero, "Consultar" de cada producto) — si hay más de uno cargado — se
+  le muestra al visitante un selector para que elija con quién quiere hablar.
+  No hay ningún número "predeterminado". Si dejás uno solo, los botones van
+  directo a ese número.
 - `categoria` acepta `"notebook"` o `"tablet"` — controla en qué pestaña del
   catálogo aparece el equipo.
 - `badges` acepta: `"recomendada"`, `"oferta"`, `"gaming"` (podés combinar o
@@ -142,6 +145,7 @@ fácil de mantener. No hace falta tocarlo para el uso normal del sitio.
 
 - El logo se guarda como archivo de imagen real en `images/logo.jpg` (antes
   estaba incrustado como texto base64 gigante dentro del HTML).
-- El número de WhatsApp que aparece en varios botones del sitio (nav, hero,
-  footer, contacto) ahora sale todo de `data/productos.json → config.waNumber`,
-  así que cambiarlo una vez lo actualiza en todos lados.
+- Los números de WhatsApp que aparecen en los botones del sitio (nav, hero,
+  "Consultar" de cada producto, formulario y sección Contacto) salen todos de
+  `data/productos.json → config.whatsapp`, así que agregarlos o editarlos ahí
+  (o desde `admin.html`) los actualiza en todos lados.
