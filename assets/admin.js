@@ -9,6 +9,7 @@ let cfg = null;          // { owner, repo, branch, token, jsonPath, imagesPath }
 let siteData = null;     // { config: {...}, productos: [...] }
 let currentSha = null;   // sha de data/productos.json, necesario para poder guardar
 let editingId = null;    // id del producto en edición (null = nuevo)
+let editingImages = [];  // fotos del producto que se está editando (array de URLs)
 
 // ── Helpers ──
 function $(sel) { return document.querySelector(sel); }
@@ -25,6 +26,10 @@ function slugify(s) {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '')
     .slice(0, 40) || 'producto';
+}
+
+function uid() {
+  return Math.random().toString(36).slice(2, 9);
 }
 
 function toast(msg, type = 'ok') {
@@ -131,8 +136,19 @@ async function connect(fromStoredConfig = false) {
   try {
     const { content, sha } = await ghGetFile(cfg.jsonPath);
     siteData = JSON.parse(content);
-    if (!siteData.config) siteData.config = { waNumber: '', instagram: '' };
+    if (!siteData.config) siteData.config = {};
+    // Compatibilidad con el formato viejo (un solo número de WhatsApp)
+    if (!siteData.config.whatsapp) {
+      siteData.config.whatsapp = siteData.config.waNumber
+        ? [{ id: 'principal', label: 'Ventas', numero: siteData.config.waNumber, predeterminado: true }]
+        : [];
+    }
+    if (!siteData.config.garantiaDefault) siteData.config.garantiaDefault = '1 mes';
     if (!siteData.productos) siteData.productos = [];
+    siteData.productos.forEach(p => {
+      if (!p.categoria) p.categoria = 'notebook';
+      if (!p.imagenes) p.imagenes = p.imagenURL ? [p.imagenURL] : [];
+    });
     currentSha = sha;
     saveConfigToStorage();
     showConnectedUI();
@@ -169,34 +185,113 @@ async function persist(message) {
   currentSha = result.content.sha;
 }
 
-// ── Render ──
+// ── Render general ──
 function renderAll() {
-  $('#waNumberInput').value = siteData.config.waNumber || '';
   $('#instagramInput').value = siteData.config.instagram || '';
+  $('#garantiaDefaultInput').value = siteData.config.garantiaDefault || '1 mes';
+  renderWaNumbersEditor();
   renderProductList();
 }
 
+// ── Números de WhatsApp (varios) ──
+function renderWaNumbersEditor() {
+  const wrap = $('#waNumbersEditor');
+  const list = siteData.config.whatsapp || [];
+  if (list.length === 0) {
+    wrap.innerHTML = '<div class="empty-state">Todavía no cargaste ningún número.</div>';
+    return;
+  }
+  wrap.innerHTML = list.map(n => `
+    <div class="wa-row" data-id="${n.id}">
+      <input type="text" class="wa-label" value="${(n.label || '').replace(/"/g, '&quot;')}" placeholder="Ej: Ventas" />
+      <input type="text" class="wa-numero" value="${(n.numero || '').replace(/"/g, '&quot;')}" placeholder="5493511234567" />
+      <label class="wa-default"><input type="radio" name="waDefault" ${n.predeterminado ? 'checked' : ''} /> Predeterminado</label>
+      <button type="button" class="wa-remove" title="Quitar número" onclick="removeWaNumberRow('${n.id}')">🗑</button>
+    </div>
+  `).join('');
+}
+
+function addWaNumberRow() {
+  if (!siteData.config.whatsapp) siteData.config.whatsapp = [];
+  siteData.config.whatsapp.push({
+    id: uid(),
+    label: '',
+    numero: '',
+    predeterminado: siteData.config.whatsapp.length === 0
+  });
+  renderWaNumbersEditor();
+}
+
+function removeWaNumberRow(id) {
+  siteData.config.whatsapp = (siteData.config.whatsapp || []).filter(n => n.id !== id);
+  if (siteData.config.whatsapp.length && !siteData.config.whatsapp.some(n => n.predeterminado)) {
+    siteData.config.whatsapp[0].predeterminado = true;
+  }
+  renderWaNumbersEditor();
+}
+
+function collectWaNumbersFromForm() {
+  const rows = $all('#waNumbersEditor .wa-row');
+  const numbers = [];
+  rows.forEach(row => {
+    const id = row.dataset.id;
+    const label = row.querySelector('.wa-label').value.trim();
+    const numero = row.querySelector('.wa-numero').value.trim().replace(/\D/g, '');
+    const predeterminado = row.querySelector('input[type=radio]').checked;
+    if (numero) numbers.push({ id, label: label || 'WhatsApp', numero, predeterminado });
+  });
+  if (numbers.length && !numbers.some(n => n.predeterminado)) numbers[0].predeterminado = true;
+  return numbers;
+}
+
+async function saveGeneralConfig() {
+  const numbers = collectWaNumbersFromForm();
+  if (numbers.length === 0) {
+    toast('Cargá al menos un número de WhatsApp.', 'err');
+    return;
+  }
+  siteData.config.whatsapp = numbers;
+  siteData.config.instagram = $('#instagramInput').value.trim().replace(/^@/, '');
+  siteData.config.garantiaDefault = $('#garantiaDefaultInput').value.trim() || '1 mes';
+  delete siteData.config.waNumber; // formato viejo, ya no se usa
+  try {
+    await persist('Actualiza números de WhatsApp / Instagram / garantía');
+    renderWaNumbersEditor();
+    toast('Datos de contacto actualizados.');
+  } catch (err) {
+    toast(err.message, 'err');
+  }
+}
+
+// ── Lista de productos ──
 function renderProductList() {
   const list = $('#productList');
   const productos = siteData.productos || [];
   if (productos.length === 0) {
-    list.innerHTML = '<div class="empty-state">Todavía no hay notebooks cargadas.</div>';
+    list.innerHTML = '<div class="empty-state">Todavía no hay equipos cargados.</div>';
     return;
   }
-  list.innerHTML = productos.map(p => `
+  list.innerHTML = productos.map(p => {
+    const cover = (p.imagenes || [])[0];
+    const catLabel = p.categoria === 'tablet' ? '📱' : '💻';
+    return `
     <div class="product-row">
-      <div class="thumb">${p.imagenURL ? `<img src="${p.imagenURL}" alt="">` : `<svg width="24" height="18" viewBox="0 0 80 60" fill="none"><rect x="4" y="4" width="72" height="48" rx="4" fill="${p.color || '#f07020'}" fill-opacity="0.25"/></svg>`}</div>
+      <div class="thumb">${cover ? `<img src="${cover}" alt="">` : `<svg width="24" height="18" viewBox="0 0 80 60" fill="none"><rect x="4" y="4" width="72" height="48" rx="4" fill="${p.color || '#f07020'}" fill-opacity="0.25"/></svg>`}</div>
       <div class="info">
-        <div class="name">${p.marca} ${p.modelo}${(p.badges || []).map(b => `<span class="badge-pill">${b}</span>`).join('')}</div>
-        <div class="sub">${p.procesador} · ${p.ram} · ${p.estado}</div>
+        <div class="name">${catLabel} ${p.marca} ${p.modelo}${(p.badges || []).map(b => `<span class="badge-pill">${b}</span>`).join('')}</div>
+        <div class="sub">${p.procesador} · ${p.ram} · ${p.estado} · ${(p.imagenes || []).length} foto(s)</div>
       </div>
-      <div class="price">$${Number(p.precio || 0).toLocaleString('es-AR')}</div>
+      <div class="price">
+        ${p.precioAnterior && Number(p.precioAnterior) > Number(p.precio) ? `<div style="text-decoration:line-through;color:var(--text3);font-size:12px;">$${Number(p.precioAnterior).toLocaleString('es-AR')}</div>` : ''}
+        $${Number(p.precio || 0).toLocaleString('es-AR')}
+      </div>
       <div class="actions">
         <button title="Editar" onclick="openProductModal(${p.id})">✎</button>
         <button title="Eliminar" onclick="deleteProduct(${p.id})">🗑</button>
       </div>
     </div>
-  `).join('');
+  `;
+  }).join('');
 }
 
 // ── Modal de producto ──
@@ -208,7 +303,8 @@ function nextId() {
 function openProductModal(id = null) {
   editingId = id;
   const p = id ? siteData.productos.find(x => x.id === id) : null;
-  $('#modalTitle').textContent = p ? 'Editar notebook' : 'Agregar notebook';
+  $('#modalTitle').textContent = p ? 'Editar equipo' : 'Agregar equipo';
+  $('#fCategoria').value = p?.categoria || 'notebook';
   $('#fModelo').value = p?.modelo || '';
   $('#fMarca').value = p?.marca || '';
   $('#fProcesador').value = p?.procesador || '';
@@ -217,28 +313,83 @@ function openProductModal(id = null) {
   $('#fPantalla').value = p?.pantalla || '';
   $('#fEstado').value = p?.estado || 'Muy bueno';
   $('#fPrecio').value = p?.precio || '';
-  $('#fGarantia').value = p?.garantia || '3 meses';
+  $('#fPrecioAnterior').value = p?.precioAnterior || '';
+  $('#fGarantia').value = p?.garantia || siteData.config.garantiaDefault || '1 mes';
   $('#fColor').value = p?.color || '#f07020';
-  $('#fImagenURL').value = p?.imagenURL || '';
-  $('#fImagenFile').value = '';
+  $('#fImagenFiles').value = '';
+  $('#fImagenURLAdd').value = '';
   ['recomendada', 'oferta', 'gaming'].forEach(b => {
     $(`#fBadge_${b}`).checked = (p?.badges || []).includes(b);
   });
-  updateImagePreview(p?.imagenURL || '');
+  editingImages = p?.imagenes ? [...p.imagenes] : (p?.imagenURL ? [p.imagenURL] : []);
+  renderImagesManager();
   $('#productModal').classList.add('open');
 }
 
 function closeProductModal() {
   $('#productModal').classList.remove('open');
   editingId = null;
+  editingImages = [];
 }
 
-function updateImagePreview(url) {
-  const wrap = $('#imagePreviewWrap');
-  if (url) {
-    wrap.innerHTML = `<div class="image-preview"><img src="${url}" alt=""></div>`;
-  } else {
-    wrap.innerHTML = '';
+// ── Varias fotos por producto ──
+function renderImagesManager() {
+  const wrap = $('#imagesManager');
+  if (editingImages.length === 0) {
+    wrap.innerHTML = '<div class="empty-state" style="padding:1rem 0;">Todavía no hay fotos para este equipo.</div>';
+    return;
+  }
+  wrap.innerHTML = editingImages.map((url, i) => `
+    <div class="image-thumb">
+      <img src="${url}" alt="">
+      ${i === 0 ? '<span class="image-cover-tag">Portada</span>' : ''}
+      <button type="button" title="Quitar foto" onclick="removeImageAt(${i})">×</button>
+    </div>
+  `).join('');
+}
+
+function removeImageAt(i) {
+  editingImages.splice(i, 1);
+  renderImagesManager();
+}
+
+function addImageUrl() {
+  const input = $('#fImagenURLAdd');
+  const url = input.value.trim();
+  if (!url) return;
+  editingImages.push(url);
+  input.value = '';
+  renderImagesManager();
+}
+
+async function uploadSelectedImageFiles() {
+  const files = Array.from($('#fImagenFiles').files || []);
+  if (files.length === 0) return;
+  const marca = $('#fMarca').value.trim() || 'equipo';
+  const modelo = $('#fModelo').value.trim() || '';
+  const addBtn = $('#addFilesBtn');
+  addBtn.disabled = true;
+  const original = addBtn.textContent;
+  try {
+    for (let i = 0; i < files.length; i++) {
+      addBtn.innerHTML = `<span class="loader"></span> Subiendo ${i + 1}/${files.length}...`;
+      const file = files[i];
+      const base64 = await fileToBase64(file);
+      const ext = (file.name.split('.').pop() || 'jpg').toLowerCase();
+      const filename = `${slugify(marca + '-' + modelo)}-${Date.now()}-${i}.${ext}`;
+      const path = `${cfg.imagesPath}/${filename}`;
+      const result = await ghPutBinaryFile(path, base64, `Sube foto de ${marca} ${modelo}`);
+      editingImages.push(result.content.download_url);
+      renderImagesManager();
+    }
+    toast(`${files.length} foto(s) subida(s).`);
+  } catch (err) {
+    console.error(err);
+    toast(err.message, 'err');
+  } finally {
+    addBtn.disabled = false;
+    addBtn.textContent = original;
+    $('#fImagenFiles').value = '';
   }
 }
 
@@ -246,8 +397,14 @@ async function saveProductFromModal() {
   const modelo = $('#fModelo').value.trim();
   const marca = $('#fMarca').value.trim();
   const precio = parseInt($('#fPrecio').value, 10) || 0;
+  const precioAnteriorRaw = $('#fPrecioAnterior').value.trim();
+  const precioAnterior = precioAnteriorRaw ? parseInt(precioAnteriorRaw, 10) : null;
   if (!modelo || !marca || !precio) {
     toast('Completá al menos marca, modelo y precio.', 'err');
+    return;
+  }
+  if (precioAnterior && precioAnterior <= precio) {
+    toast('El precio anterior tiene que ser mayor al precio actual para mostrarse como descuento.', 'err');
     return;
   }
 
@@ -256,22 +413,11 @@ async function saveProductFromModal() {
   saveBtn.innerHTML = '<span class="loader"></span> Guardando...';
 
   try {
-    let imagenURL = $('#fImagenURL').value.trim();
-    const file = $('#fImagenFile').files[0];
-
-    if (file) {
-      const base64 = await fileToBase64(file);
-      const ext = (file.name.split('.').pop() || 'jpg').toLowerCase();
-      const filename = `${slugify(marca + '-' + modelo)}-${Date.now()}.${ext}`;
-      const path = `${cfg.imagesPath}/${filename}`;
-      const result = await ghPutBinaryFile(path, base64, `Sube foto de ${marca} ${modelo}`);
-      imagenURL = result.content.download_url;
-    }
-
     const badges = ['recomendada', 'oferta', 'gaming'].filter(b => $(`#fBadge_${b}`).checked);
 
     const product = {
       id: editingId || nextId(),
+      categoria: $('#fCategoria').value,
       modelo, marca,
       procesador: $('#fProcesador').value.trim(),
       ram: $('#fRam').value.trim(),
@@ -279,10 +425,11 @@ async function saveProductFromModal() {
       pantalla: $('#fPantalla').value.trim(),
       estado: $('#fEstado').value,
       precio,
-      garantia: $('#fGarantia').value.trim() || '3 meses',
+      precioAnterior,
+      garantia: $('#fGarantia').value.trim() || siteData.config.garantiaDefault || '1 mes',
       badges,
       color: $('#fColor').value,
-      imagenURL
+      imagenes: [...editingImages]
     };
 
     if (editingId) {
@@ -292,7 +439,7 @@ async function saveProductFromModal() {
       siteData.productos.push(product);
     }
 
-    await persist(`${editingId ? 'Edita' : 'Agrega'} notebook: ${marca} ${modelo}`);
+    await persist(`${editingId ? 'Edita' : 'Agrega'} equipo: ${marca} ${modelo}`);
     renderProductList();
     closeProductModal();
     toast('Guardado. El sitio se va a actualizar en unos segundos.');
@@ -311,20 +458,9 @@ async function deleteProduct(id) {
   if (!confirm(`¿Eliminar "${p.marca} ${p.modelo}" del catálogo?`)) return;
   siteData.productos = siteData.productos.filter(x => x.id !== id);
   try {
-    await persist(`Elimina notebook: ${p.marca} ${p.modelo}`);
+    await persist(`Elimina equipo: ${p.marca} ${p.modelo}`);
     renderProductList();
-    toast('Notebook eliminada.');
-  } catch (err) {
-    toast(err.message, 'err');
-  }
-}
-
-async function saveGeneralConfig() {
-  siteData.config.waNumber = $('#waNumberInput').value.trim();
-  siteData.config.instagram = $('#instagramInput').value.trim().replace(/^@/, '');
-  try {
-    await persist('Actualiza número de WhatsApp / Instagram');
-    toast('Datos de contacto actualizados.');
+    toast('Equipo eliminado.');
   } catch (err) {
     toast(err.message, 'err');
   }
@@ -334,6 +470,15 @@ async function reloadFromGitHub() {
   try {
     const { content, sha } = await ghGetFile(cfg.jsonPath);
     siteData = JSON.parse(content);
+    if (!siteData.config.whatsapp) {
+      siteData.config.whatsapp = siteData.config.waNumber
+        ? [{ id: 'principal', label: 'Ventas', numero: siteData.config.waNumber, predeterminado: true }]
+        : [];
+    }
+    siteData.productos.forEach(p => {
+      if (!p.categoria) p.categoria = 'notebook';
+      if (!p.imagenes) p.imagenes = p.imagenURL ? [p.imagenURL] : [];
+    });
     currentSha = sha;
     renderAll();
     toast('Recargado desde GitHub.');
@@ -356,5 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
     connect(true);
   }
 
-  $('#fImagenURL').addEventListener('input', e => updateImagePreview(e.target.value.trim()));
+  $('#addWaNumberBtn').addEventListener('click', addWaNumberRow);
+  $('#addFilesBtn').addEventListener('click', uploadSelectedImageFiles);
+  $('#addUrlBtn').addEventListener('click', addImageUrl);
 });
