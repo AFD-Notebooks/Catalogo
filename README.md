@@ -88,12 +88,16 @@ archivo, en github.com) o desde tu computadora. Es un JSON con esta forma:
 ```json
 {
   "config": {
-    "waNumber": "5493511234567",
-    "instagram": "afd.notebooks"
+    "whatsapp": [
+      { "id": "principal", "label": "Ventas", "numero": "5493511234567", "predeterminado": true }
+    ],
+    "instagram": "afd.notebooks",
+    "garantiaDefault": "1 mes"
   },
   "productos": [
     {
       "id": 1,
+      "categoria": "notebook",
       "modelo": "ThinkPad E14 Gen 3",
       "marca": "Lenovo",
       "procesador": "AMD Ryzen 5 5500U",
@@ -102,19 +106,30 @@ archivo, en github.com) o desde tu computadora. Es un JSON con esta forma:
       "pantalla": "14\" FHD IPS",
       "estado": "Excelente",
       "precio": 320000,
-      "garantia": "3 meses",
+      "precioAnterior": null,
+      "garantia": "1 mes",
       "badges": ["recomendada"],
       "color": "#f07020",
-      "imagenURL": ""
+      "imagenes": []
     }
   ]
 }
 ```
 
+- `config.whatsapp` es una lista de números (podés cargar varios, por ejemplo
+  "Ventas" y "Soporte"). El que tenga `"predeterminado": true` es el que se usa
+  en los botones rápidos del sitio (nav, hero, "Consultar" de cada producto).
+  Todos los números de la lista aparecen como opciones en la sección Contacto.
+- `categoria` acepta `"notebook"` o `"tablet"` — controla en qué pestaña del
+  catálogo aparece el equipo.
 - `badges` acepta: `"recomendada"`, `"oferta"`, `"gaming"` (podés combinar o
   dejarlo vacío `[]`).
-- `imagenURL` vacío = se muestra un ícono de color de respaldo (usando
-  `color`). Con una URL de imagen, se muestra la foto.
+- `imagenes` es una lista de URLs de fotos (podés cargar varias — la primera es
+  la portada del catálogo y se arma una mini galería con flechas). Vacía (`[]`)
+  = se muestra un ícono de color de respaldo (usando `color`).
+- `precioAnterior`: si le ponés un número mayor a `precio`, la tarjeta muestra
+  el precio anterior tachado y el nuevo con el % de descuento. Dejalo en
+  `null` si no hay oferta.
 - `id` tiene que ser único entre todos los productos.
 
 ## Cambiar el diseño

@@ -89,24 +89,27 @@
 
     <div class="admin-card">
       <h2>Datos de contacto del sitio</h2>
-      <p class="hint">Esto actualiza todos los botones de WhatsApp e Instagram del sitio, en un solo lugar.</p>
-      <div class="field-grid">
-        <div class="field">
-          <label for="waNumberInput">Número de WhatsApp (con código de país, sin + ni espacios)</label>
-          <input type="text" id="waNumberInput" placeholder="5493511234567" />
-        </div>
+      <p class="hint">Podés cargar varios números de WhatsApp (por ejemplo Ventas y Soporte). Todos aparecen como opciones de contacto en la sección Contacto del sitio; el marcado como "Predeterminado" es el que se usa en los botones rápidos (nav, hero) y en el botón "Consultar" de cada producto.</p>
+      <div id="waNumbersEditor" class="wa-numbers-editor"></div>
+      <button type="button" class="btn btn-outline" id="addWaNumberBtn" style="margin-top:0.75rem;">+ Agregar número de WhatsApp</button>
+
+      <div class="field-grid" style="margin-top:1.5rem;">
         <div class="field">
           <label for="instagramInput">Usuario de Instagram (sin @)</label>
           <input type="text" id="instagramInput" placeholder="afd.notebooks" />
         </div>
+        <div class="field">
+          <label for="garantiaDefaultInput">Garantía por defecto (para equipos nuevos)</label>
+          <input type="text" id="garantiaDefaultInput" placeholder="1 mes" value="1 mes" />
+        </div>
       </div>
-      <button class="btn btn-accent" onclick="saveGeneralConfig()">Guardar datos de contacto</button>
+      <button class="btn btn-accent" style="margin-top:0.75rem;" onclick="saveGeneralConfig()">Guardar datos de contacto</button>
     </div>
 
     <div class="admin-card">
       <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
-        <h2 style="margin:0;">Notebooks en stock</h2>
-        <button class="btn btn-accent" onclick="openProductModal()">+ Agregar notebook</button>
+        <h2 style="margin:0;">Equipos en stock</h2>
+        <button class="btn btn-accent" onclick="openProductModal()">+ Agregar equipo</button>
       </div>
       <div class="product-list" id="productList"></div>
     </div>
@@ -121,6 +124,13 @@
       <button class="modal-close" onclick="closeProductModal()">×</button>
     </div>
     <div class="field-grid">
+      <div class="field">
+        <label>Categoría</label>
+        <select id="fCategoria">
+          <option value="notebook">💻 Notebook</option>
+          <option value="tablet">📱 Tablet</option>
+        </select>
+      </div>
       <div class="field"><label>Marca</label><input type="text" id="fMarca" placeholder="Lenovo" /></div>
       <div class="field"><label>Modelo</label><input type="text" id="fModelo" placeholder="ThinkPad E14 Gen 3" /></div>
       <div class="field full"><label>Procesador</label><input type="text" id="fProcesador" placeholder="AMD Ryzen 5 5500U" /></div>
@@ -137,7 +147,11 @@
         </select>
       </div>
       <div class="field"><label>Precio (ARS)</label><input type="number" id="fPrecio" placeholder="320000" /></div>
-      <div class="field"><label>Garantía</label><input type="text" id="fGarantia" placeholder="3 meses" value="3 meses" /></div>
+      <div class="field">
+        <label>Precio anterior (opcional — para mostrar oferta)</label>
+        <input type="number" id="fPrecioAnterior" placeholder="Dejar vacío si no hay descuento" />
+      </div>
+      <div class="field"><label>Garantía</label><input type="text" id="fGarantia" placeholder="1 mes" value="1 mes" /></div>
       <div class="field">
         <label>Color de respaldo (si no hay foto)</label>
         <input type="color" id="fColor" value="#f07020" />
@@ -151,13 +165,16 @@
         </div>
       </div>
       <div class="field full">
-        <label>Foto (subir archivo — reemplaza la URL de abajo)</label>
-        <input type="file" id="fImagenFile" accept="image/*" />
-      </div>
-      <div class="field full">
-        <label>o URL de imagen externa</label>
-        <input type="url" id="fImagenURL" placeholder="https://..." />
-        <div id="imagePreviewWrap"></div>
+        <label>Fotos del equipo (la primera es la portada del catálogo)</label>
+        <div id="imagesManager" class="images-manager"></div>
+        <div class="images-add-row">
+          <input type="file" id="fImagenFiles" accept="image/*" multiple />
+          <button type="button" class="btn btn-outline" id="addFilesBtn">Subir foto(s)</button>
+        </div>
+        <div class="images-add-row">
+          <input type="url" id="fImagenURLAdd" placeholder="o pegá una URL de imagen externa" />
+          <button type="button" class="btn btn-outline" id="addUrlBtn">+ Agregar URL</button>
+        </div>
       </div>
     </div>
     <button class="btn btn-accent" id="saveProductBtn" onclick="saveProductFromModal()">Guardar</button>
