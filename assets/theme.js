@@ -38,6 +38,6 @@ function sendWhatsAppForm() {
   const msg = document.getElementById('cMsg').value.trim();
   if (!msg) { alert('Por favor escribí tu consulta.'); return; }
   const text = `Hola! Soy ${name || 'un interesado'}. ${msg}`;
-  const link = window.__AFD_WA_LINK__ ? window.__AFD_WA_LINK__(text) : `https://wa.me/?text=${encodeURIComponent(text)}`;
-  window.open(link, '_blank');
+  if (window.__AFD_WA_CHOOSE__) window.__AFD_WA_CHOOSE__(text);
+  else window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
 }

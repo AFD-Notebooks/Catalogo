@@ -262,7 +262,7 @@
 .wa-numbers-editor { display: flex; flex-direction: column; gap: 10px; }
 .wa-row {
   display: grid;
-  grid-template-columns: 1fr 1.4fr auto auto;
+  grid-template-columns: 1fr 1.4fr auto;
   align-items: center;
   gap: 10px;
   background: var(--bg3);
@@ -278,10 +278,6 @@
   color: var(--text);
   font-family: inherit;
   font-size: 13px;
-}
-.wa-default {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 12px; color: var(--text2); white-space: nowrap;
 }
 .wa-remove {
   width: 32px; height: 32px;

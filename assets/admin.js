@@ -38,7 +38,7 @@ function toast(msg, type = 'ok') {
   el.className = `toast ${type}`;
   el.textContent = msg;
   wrap.appendChild(el);
-  setTimeout(() => el.remove(), 5000);
+  setTimeout(() => el.remove(), type === 'err' ? 9000 : 5000);
 }
 
 function ghHeaders(extra = {}) {
@@ -140,7 +140,7 @@ async function connect(fromStoredConfig = false) {
     // Compatibilidad con el formato viejo (un solo número de WhatsApp)
     if (!siteData.config.whatsapp) {
       siteData.config.whatsapp = siteData.config.waNumber
-        ? [{ id: 'principal', label: 'Ventas', numero: siteData.config.waNumber, predeterminado: true }]
+        ? [{ id: 'principal', label: 'Ventas', numero: siteData.config.waNumber }]
         : [];
     }
     if (!siteData.config.garantiaDefault) siteData.config.garantiaDefault = '1 mes';
@@ -194,6 +194,9 @@ function renderAll() {
 }
 
 // ── Números de WhatsApp (varios) ──
+// Todos los números aparecen como opciones de contacto; no hay uno "predeterminado".
+// Las filas están enlazadas en vivo a siteData.config.whatsapp (cada tecleo actualiza
+// el dato en memoria), así que agregar o quitar una fila nunca pisa lo que ya escribiste.
 function renderWaNumbersEditor() {
   const wrap = $('#waNumbersEditor');
   const list = siteData.config.whatsapp || [];
@@ -201,51 +204,36 @@ function renderWaNumbersEditor() {
     wrap.innerHTML = '<div class="empty-state">Todavía no cargaste ningún número.</div>';
     return;
   }
-  wrap.innerHTML = list.map(n => `
+  wrap.innerHTML = list.map((n, i) => `
     <div class="wa-row" data-id="${n.id}">
-      <input type="text" class="wa-label" value="${(n.label || '').replace(/"/g, '&quot;')}" placeholder="Ej: Ventas" />
-      <input type="text" class="wa-numero" value="${(n.numero || '').replace(/"/g, '&quot;')}" placeholder="5493511234567" />
-      <label class="wa-default"><input type="radio" name="waDefault" ${n.predeterminado ? 'checked' : ''} /> Predeterminado</label>
+      <input type="text" class="wa-label" data-idx="${i}" value="${(n.label || '').replace(/"/g, '&quot;')}" placeholder="Ej: Ventas" />
+      <input type="text" class="wa-numero" data-idx="${i}" value="${(n.numero || '').replace(/"/g, '&quot;')}" placeholder="5493511234567" />
       <button type="button" class="wa-remove" title="Quitar número" onclick="removeWaNumberRow('${n.id}')">🗑</button>
     </div>
   `).join('');
+  wrap.querySelectorAll('.wa-label').forEach(inp => {
+    inp.addEventListener('input', () => { list[+inp.dataset.idx].label = inp.value; });
+  });
+  wrap.querySelectorAll('.wa-numero').forEach(inp => {
+    inp.addEventListener('input', () => { list[+inp.dataset.idx].numero = inp.value; });
+  });
 }
 
 function addWaNumberRow() {
   if (!siteData.config.whatsapp) siteData.config.whatsapp = [];
-  siteData.config.whatsapp.push({
-    id: uid(),
-    label: '',
-    numero: '',
-    predeterminado: siteData.config.whatsapp.length === 0
-  });
+  siteData.config.whatsapp.push({ id: uid(), label: '', numero: '' });
   renderWaNumbersEditor();
 }
 
 function removeWaNumberRow(id) {
   siteData.config.whatsapp = (siteData.config.whatsapp || []).filter(n => n.id !== id);
-  if (siteData.config.whatsapp.length && !siteData.config.whatsapp.some(n => n.predeterminado)) {
-    siteData.config.whatsapp[0].predeterminado = true;
-  }
   renderWaNumbersEditor();
 }
 
-function collectWaNumbersFromForm() {
-  const rows = $all('#waNumbersEditor .wa-row');
-  const numbers = [];
-  rows.forEach(row => {
-    const id = row.dataset.id;
-    const label = row.querySelector('.wa-label').value.trim();
-    const numero = row.querySelector('.wa-numero').value.trim().replace(/\D/g, '');
-    const predeterminado = row.querySelector('input[type=radio]').checked;
-    if (numero) numbers.push({ id, label: label || 'WhatsApp', numero, predeterminado });
-  });
-  if (numbers.length && !numbers.some(n => n.predeterminado)) numbers[0].predeterminado = true;
-  return numbers;
-}
-
 async function saveGeneralConfig() {
-  const numbers = collectWaNumbersFromForm();
+  const numbers = (siteData.config.whatsapp || [])
+    .map(n => ({ id: n.id, label: (n.label || '').trim() || 'WhatsApp', numero: (n.numero || '').replace(/\D/g, '') }))
+    .filter(n => n.numero);
   if (numbers.length === 0) {
     toast('Cargá al menos un número de WhatsApp.', 'err');
     return;
@@ -259,6 +247,7 @@ async function saveGeneralConfig() {
     renderWaNumbersEditor();
     toast('Datos de contacto actualizados.');
   } catch (err) {
+    console.error(err);
     toast(err.message, 'err');
   }
 }
@@ -472,7 +461,7 @@ async function reloadFromGitHub() {
     siteData = JSON.parse(content);
     if (!siteData.config.whatsapp) {
       siteData.config.whatsapp = siteData.config.waNumber
-        ? [{ id: 'principal', label: 'Ventas', numero: siteData.config.waNumber, predeterminado: true }]
+        ? [{ id: 'principal', label: 'Ventas', numero: siteData.config.waNumber }]
         : [];
     }
     siteData.productos.forEach(p => {

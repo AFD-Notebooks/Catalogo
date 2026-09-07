@@ -293,6 +293,7 @@
       display: flex; align-items: center; gap: 6px;
       padding: 9px 18px; border-radius: 50px; font-size: 13px; font-weight: 500;
       background: #25d366; color: #fff; flex-shrink: 0;
+      border: none; cursor: pointer; font-family: inherit;
       transition: opacity var(--transition), transform var(--transition);
     }
     .btn-contact:hover { opacity: 0.87; transform: translateY(-1px); }
@@ -438,6 +439,31 @@
     .ch-ig svg { fill: var(--accent); }
     .ch-label { font-weight: 500; }
     .ch-sub { font-size: 12px; color: var(--text3); }
+
+    /* ── SELECTOR DE WHATSAPP (varios números: el visitante elige con quién hablar) ── */
+    .wa-modal-backdrop {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+      display: none; align-items: center; justify-content: center;
+      padding: 1.5rem; z-index: 500;
+    }
+    .wa-modal-backdrop.open { display: flex; }
+    .wa-modal {
+      background: var(--bg2); border: 1px solid var(--border2);
+      border-radius: var(--radius); padding: 1.5rem;
+      max-width: 380px; width: 100%;
+    }
+    .wa-modal-head {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .wa-modal-head h3 { font-size: 1.05rem; font-weight: 500; }
+    .wa-modal-close {
+      width: 30px; height: 30px; border-radius: 50%; border: none; background: transparent;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text2); font-size: 20px; cursor: pointer;
+    }
+    .wa-modal-close:hover { background: var(--bg3); }
+    .wa-modal-list { display: flex; flex-direction: column; gap: 10px; }
     .contact-card {
       background: var(--bg2); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 2rem;
