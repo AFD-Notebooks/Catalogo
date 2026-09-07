@@ -6,6 +6,12 @@
         "label": "Ventas",
         "numero": "5493516193366",
         "predeterminado": true
+      },
+      {
+        "id": "9dcrwa8",
+        "label": "Francisco",
+        "numero": "5493515403265",
+        "predeterminado": false
       }
     ],
     "instagram": "afd.notebooks",
