@@ -170,6 +170,23 @@
       "imagenes": [
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-1786312091684.jpeg"
       ]
+    },
+    {
+      "id": 8,
+      "categoria": "notebook",
+      "modelo": "IdeaPad Slim 3",
+      "marca": "Lenovo",
+      "procesador": "Intel Core i7 13620H",
+      "ram": "16GB DDR5",
+      "almacenamiento": "512GB SSD",
+      "pantalla": "15,6´ FullHD Antirreflectante",
+      "estado": "Excelente",
+      "precio": 970,
+      "precioAnterior": null,
+      "garantia": "1 mes",
+      "badges": [],
+      "color": "#f07020",
+      "imagenes": []
     }
   ]
 }
