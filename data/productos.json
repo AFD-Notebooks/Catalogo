@@ -179,14 +179,21 @@
       "procesador": "Intel Core i7 13620H",
       "ram": "16GB DDR5",
       "almacenamiento": "512GB SSD",
-      "pantalla": "15,6´ FullHD Antirreflectante",
+      "pantalla": "15,6´ FullHD Antirreflex",
       "estado": "Excelente",
       "precio": 970000,
       "precioAnterior": null,
       "garantia": "1 mes",
       "badges": [],
       "color": "#f07020",
-      "imagenes": []
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1788877950459-0.jpeg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1788877988560-0.jpeg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1788877990863-1.jpeg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1788877993229-2.jpeg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1788877996246-3.jpeg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1788877997987-4.jpeg"
+      ]
     }
   ]
 }
