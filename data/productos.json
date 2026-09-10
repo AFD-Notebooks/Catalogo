@@ -181,6 +181,33 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-v15-g5-irl-1789069010259-4.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-v15-g5-irl-1789069012782-5.jpg"
       ]
+    },
+    {
+      "id": 9,
+      "categoria": "tablet",
+      "modelo": "IdeaTab",
+      "marca": "Lenovo",
+      "procesador": "MediaTek Dimestry 6300",
+      "ram": "8GB",
+      "almacenamiento": "128GB",
+      "pantalla": "11\" Resolución 2,5 K",
+      "estado": "Excelente",
+      "precio": 540000,
+      "precioAnterior": 600000,
+      "garantia": "30 días",
+      "badges": [
+        "recomendada",
+        "oferta"
+      ],
+      "color": "#f07020",
+      "detalles": "📦En caja con sus manuales\n🦾Incluye Lenovo Case (Funda)\n✏️Lenovo Pencil + Repuesto de punta\n🔓 Garantía oficial Lenovo",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideatab-1789069361995-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideatab-1789069365379-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideatab-1789069367629-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideatab-1789069371009-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideatab-1789069373775-4.jpg"
+      ]
     }
   ]
 }
