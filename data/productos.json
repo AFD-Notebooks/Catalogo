@@ -111,13 +111,14 @@
       "pantalla": "14\" FHD IPS",
       "estado": "Excelente",
       "precio": 770000,
-      "precioAnterior": null,
+      "precioAnterior": 870000,
       "garantia": "30 días",
       "badges": [
         "recomendada",
         "oferta"
       ],
       "color": "#3d1040",
+      "detalles": "🪽Construcción de Aluminio Super liviano\n⌨️Teclado Retroiluminado\n🫆Lector de Huella digital\n🔋Carga Rápida",
       "imagenes": [
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-swift-1786403432764.jpg"
       ]
