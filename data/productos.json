@@ -208,6 +208,34 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideatab-1789069371009-3.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideatab-1789069373775-4.jpg"
       ]
+    },
+    {
+      "id": 10,
+      "categoria": "tablet",
+      "modelo": "Tab M11",
+      "marca": "Lenovo",
+      "procesador": "MediaTek Helio G88",
+      "ram": "8GB",
+      "almacenamiento": "128GB",
+      "pantalla": "11\" Full hd",
+      "estado": "Excelente",
+      "precio": 520000,
+      "precioAnterior": 590000,
+      "garantia": "30 días",
+      "badges": [
+        "recomendada",
+        "oferta"
+      ],
+      "color": "#f07020",
+      "detalles": "",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1789069500894-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1789069503561-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1789069505978-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1789069508132-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1789069510924-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1789069513568-5.jpg"
+      ]
     }
   ]
 }
