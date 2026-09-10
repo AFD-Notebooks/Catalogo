@@ -92,9 +92,7 @@
       "precio": 700000,
       "precioAnterior": null,
       "garantia": "30 días",
-      "badges": [
-        "recomendada"
-      ],
+      "badges": [],
       "color": "#888888",
       "detalles": "",
       "imagenes": [
