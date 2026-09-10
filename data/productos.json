@@ -70,25 +70,6 @@
       "imagenes": []
     },
     {
-      "id": 3,
-      "categoria": "notebook",
-      "modelo": "ASPIRE 3",
-      "marca": "Acer",
-      "procesador": "Intel Core i5 135U",
-      "ram": "8 GB DDR5",
-      "almacenamiento": "512 GB SSD",
-      "pantalla": "15.6\" FHD",
-      "estado": "Excelente",
-      "precio": 690000,
-      "precioAnterior": null,
-      "garantia": "30 días",
-      "badges": [],
-      "color": "#c02060",
-      "imagenes": [
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-3-1786403703690.jpg"
-      ]
-    },
-    {
       "id": 5,
       "categoria": "notebook",
       "modelo": "Inspiron 15",
