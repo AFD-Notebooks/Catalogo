@@ -110,6 +110,7 @@ archivo, en github.com) o desde tu computadora. Es un JSON con esta forma:
       "garantia": "1 mes",
       "badges": ["recomendada"],
       "color": "#f07020",
+      "detalles": "",
       "imagenes": []
     }
   ]
@@ -129,10 +130,17 @@ archivo, en github.com) o desde tu computadora. Es un JSON con esta forma:
   dejarlo vacío `[]`).
 - `imagenes` es una lista de URLs de fotos (podés cargar varias — la primera es
   la portada del catálogo y se arma una mini galería con flechas). Vacía (`[]`)
-  = se muestra un ícono de color de respaldo (usando `color`).
+  = se muestra un ícono de color de respaldo (usando `color`). Desde el panel
+  admin podés subir fotos en JPG, PNG o **HEIC** (las que sacan los iPhone por
+  defecto) — las HEIC se convierten automáticamente a JPG en el navegador
+  antes de subirse, porque la mayoría de los navegadores no puede mostrar
+  HEIC directamente en una página web.
 - `precioAnterior`: si le ponés un número mayor a `precio`, la tarjeta muestra
   el precio anterior tachado y el nuevo con el % de descuento. Dejalo en
   `null` si no hay oferta.
+- `detalles` (opcional): texto libre para aclaraciones que no entran en las
+  demás fichas — rayones, accesorios incluidos, detalles de un problema
+  menor, etc. Si lo dejás vacío no se muestra nada en la tarjeta.
 - `id` tiene que ser único entre todos los productos.
 
 ## Cambiar el diseño
