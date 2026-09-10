@@ -104,6 +104,37 @@ function fileToBase64(file) {
   });
 }
 
+// ── Fotos HEIC (iPhone): la mayoría de los navegadores no puede mostrar .heic/.heif en
+// una página web, así que las convertimos a JPG acá mismo antes de subirlas. ──
+function isHeicFile(file) {
+  return /\.(heic|heif)$/i.test(file.name) || file.type === 'image/heic' || file.type === 'image/heif';
+}
+
+async function convertHeicToJpeg(file, maxDim = 1600, quality = 0.82) {
+  if (typeof window.__heicTo !== 'function') {
+    throw new Error(`No se pudo convertir "${file.name}" (no cargó la librería de conversión HEIC). Probá de nuevo o subí la foto ya convertida a JPG.`);
+  }
+  let bitmap;
+  try {
+    bitmap = await window.__heicTo({ blob: file, type: 'bitmap' });
+  } catch (err) {
+    throw new Error(`No se pudo convertir "${file.name}" desde HEIC. Probá exportarla como JPG desde el celular y subirla de nuevo.`);
+  }
+  let { width, height } = bitmap;
+  if (Math.max(width, height) > maxDim) {
+    const ratio = maxDim / Math.max(width, height);
+    width = Math.round(width * ratio);
+    height = Math.round(height * ratio);
+  }
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  canvas.getContext('2d').drawImage(bitmap, 0, 0, width, height);
+  const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
+  const newName = file.name.replace(/\.(heic|heif)$/i, '.jpg');
+  return new File([blob], newName, { type: 'image/jpeg' });
+}
+
 // ── Conexión ──
 function loadConfigFromStorage() {
   try {
@@ -305,6 +336,7 @@ function openProductModal(id = null) {
   $('#fPrecioAnterior').value = p?.precioAnterior || '';
   $('#fGarantia').value = p?.garantia || siteData.config.garantiaDefault || '1 mes';
   $('#fColor').value = p?.color || '#f07020';
+  $('#fDetalles').value = p?.detalles || '';
   $('#fImagenFiles').value = '';
   $('#fImagenURLAdd').value = '';
   ['recomendada', 'oferta', 'gaming'].forEach(b => {
@@ -359,22 +391,32 @@ async function uploadSelectedImageFiles() {
   const addBtn = $('#addFilesBtn');
   addBtn.disabled = true;
   const original = addBtn.textContent;
+  let ok = 0;
+  const failed = [];
   try {
     for (let i = 0; i < files.length; i++) {
-      addBtn.innerHTML = `<span class="loader"></span> Subiendo ${i + 1}/${files.length}...`;
-      const file = files[i];
-      const base64 = await fileToBase64(file);
-      const ext = (file.name.split('.').pop() || 'jpg').toLowerCase();
-      const filename = `${slugify(marca + '-' + modelo)}-${Date.now()}-${i}.${ext}`;
-      const path = `${cfg.imagesPath}/${filename}`;
-      const result = await ghPutBinaryFile(path, base64, `Sube foto de ${marca} ${modelo}`);
-      editingImages.push(result.content.download_url);
-      renderImagesManager();
+      let file = files[i];
+      try {
+        if (isHeicFile(file)) {
+          addBtn.innerHTML = `<span class="loader"></span> Convirtiendo HEIC ${i + 1}/${files.length}...`;
+          file = await convertHeicToJpeg(file);
+        }
+        addBtn.innerHTML = `<span class="loader"></span> Subiendo ${i + 1}/${files.length}...`;
+        const base64 = await fileToBase64(file);
+        const ext = (file.name.split('.').pop() || 'jpg').toLowerCase();
+        const filename = `${slugify(marca + '-' + modelo)}-${Date.now()}-${i}.${ext}`;
+        const path = `${cfg.imagesPath}/${filename}`;
+        const result = await ghPutBinaryFile(path, base64, `Sube foto de ${marca} ${modelo}`);
+        editingImages.push(result.content.download_url);
+        renderImagesManager();
+        ok++;
+      } catch (err) {
+        console.error(err);
+        failed.push(files[i].name);
+        toast(err.message, 'err');
+      }
     }
-    toast(`${files.length} foto(s) subida(s).`);
-  } catch (err) {
-    console.error(err);
-    toast(err.message, 'err');
+    if (ok > 0) toast(`${ok} foto(s) subida(s)${failed.length ? `. ${failed.length} no se pudo(eron) subir.` : '.'}`);
   } finally {
     addBtn.disabled = false;
     addBtn.textContent = original;
@@ -418,6 +460,7 @@ async function saveProductFromModal() {
       garantia: $('#fGarantia').value.trim() || siteData.config.garantiaDefault || '1 mes',
       badges,
       color: $('#fColor').value,
+      detalles: $('#fDetalles').value.trim(),
       imagenes: [...editingImages]
     };
 

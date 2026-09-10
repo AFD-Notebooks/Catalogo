@@ -284,6 +284,14 @@
     .spec-row:last-child { border-bottom: none; }
     .spec-key { color: var(--text3); }
     .spec-val { font-weight: 500; font-family: 'DM Mono', monospace; font-size: 12px; }
+
+    /* ── DETALLES EXTRA (texto libre opcional por producto) ── */
+    .card-details {
+      font-size: 12.5px; line-height: 1.6; color: var(--text2);
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 10px 12px;
+      margin-top: 10px; white-space: pre-line;
+    }
     .card-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; gap: 10px; }
     .price-block {}
     .price { font-size: 22px; font-weight: 500; color: var(--accent); }

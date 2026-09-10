@@ -2,6 +2,7 @@
 // Este archivo NO tiene productos "hardcodeados": los trae desde data/productos.json
 // Para agregar, editar o quitar notebooks/tablets, no toques este archivo.
 // Usá el panel admin.html, o editá directamente data/productos.json en GitHub.
+// v2
 
 let SITE_CONFIG = { whatsapp: [], instagram: '' };
 let PRODUCTS = [];
@@ -131,6 +132,7 @@ function renderCard(p) {
         <div class="spec-row"><span class="spec-key">Pantalla</span><span class="spec-val">${p.pantalla}</span></div>
         <div class="spec-row"><span class="spec-key">Estado</span><span class="spec-val" style="color:var(--accent)">${p.estado}</span></div>
       </div>
+      ${p.detalles ? `<div class="card-details">${escapeHTML(p.detalles)}</div>` : ''}
       <div class="card-foot">
         <div class="price-block">
           ${priceHTML(p)}
