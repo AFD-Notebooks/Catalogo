@@ -53,21 +53,31 @@
     {
       "id": 2,
       "categoria": "notebook",
-      "modelo": "15 -fc00101a",
-      "marca": "Hp",
-      "procesador": "AMD Ryzen 5 7520U",
-      "ram": "8 GB DDR5",
-      "almacenamiento": "256 GB SSD",
+      "modelo": "IdeaPad Slim 3",
+      "marca": "Lenovo",
+      "procesador": "Intel Core i7 13620H",
+      "ram": "16 GB DDR5",
+      "almacenamiento": "512 GB SSD",
       "pantalla": "15.6\" FHD",
-      "estado": "Muy bueno",
-      "precio": 670000,
-      "precioAnterior": null,
+      "estado": "Excelente",
+      "precio": 970000,
+      "precioAnterior": 1050000,
       "garantia": "30 días",
       "badges": [
+        "recomendada",
         "oferta"
       ],
       "color": "#e84040",
-      "imagenes": []
+      "detalles": "",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1789068366548-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1789068369301-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1789068371730-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1789068375494-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1789068378670-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1789068380849-5.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1789068384597-6.jpg"
+      ]
     },
     {
       "id": 5,
