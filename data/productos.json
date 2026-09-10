@@ -89,28 +89,6 @@
       ]
     },
     {
-      "id": 4,
-      "categoria": "notebook",
-      "modelo": "Inspiron 15",
-      "marca": "Dell",
-      "procesador": "AMD Ryzen 5 7520U",
-      "ram": "8 GB DDR5",
-      "almacenamiento": "512 GB SSD",
-      "pantalla": "15\" FHD",
-      "estado": "Excelente",
-      "precio": 680000,
-      "precioAnterior": null,
-      "garantia": "30 días",
-      "badges": [
-        "recomendada",
-        "gaming"
-      ],
-      "color": "#f5b942",
-      "imagenes": [
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-inspiron-15-1788746003927.jpg"
-      ]
-    },
-    {
       "id": 5,
       "categoria": "notebook",
       "modelo": "Inspiron 15",
