@@ -131,20 +131,28 @@
     {
       "id": 7,
       "categoria": "notebook",
-      "modelo": "Aspire",
-      "marca": "Acer",
+      "modelo": "X515EA",
+      "marca": "ASUS",
       "procesador": "Intel Core I7 11va",
-      "ram": "16GB",
+      "ram": "12GB DDR4",
       "almacenamiento": "512GB",
-      "pantalla": "15,6\" Full HD IPS",
+      "pantalla": "15,6\" Full HD",
       "estado": "Excelente",
-      "precio": 870000,
+      "precio": 820000,
       "precioAnterior": null,
       "garantia": "30 días",
-      "badges": [],
+      "badges": [
+        "recomendada"
+      ],
       "color": "#f07020",
+      "detalles": "📦En caja con sus manuales\n📖Opción con 16GB RAM disponible",
       "imagenes": [
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-1786312091684.jpeg"
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-x515ea-1789068801449-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-x515ea-1789068804236-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-x515ea-1789068806890-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-x515ea-1789068811325-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-x515ea-1789068814332-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-x515ea-1789068818111-5.jpg"
       ]
     },
     {
