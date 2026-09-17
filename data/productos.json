@@ -207,6 +207,30 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789609234102-6.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789609236952-7.jpg"
       ]
+    },
+    {
+      "id": 12,
+      "categoria": "notebook",
+      "modelo": "250 G8",
+      "marca": "Hp",
+      "procesador": "Intel Core i5 1135G7",
+      "ram": "12GB DDR4",
+      "almacenamiento": "256 GB SSD",
+      "pantalla": "15\" FullHD",
+      "estado": "Excelente",
+      "precio": 690000,
+      "precioAnterior": null,
+      "garantia": "30 Días",
+      "badges": [],
+      "color": "#f07020",
+      "detalles": "",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g8-1789609517763-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g8-1789609520214-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g8-1789609522585-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g8-1789609525031-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g8-1789609527200-4.jpg"
+      ]
     }
   ]
 }
