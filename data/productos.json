@@ -103,28 +103,6 @@
       ]
     },
     {
-      "id": 6,
-      "categoria": "notebook",
-      "modelo": "Swift",
-      "marca": "Acer",
-      "procesador": "Intel Core i7 EVO 11va Generación",
-      "ram": "8 GB DDR4",
-      "almacenamiento": "256 GB SSD",
-      "pantalla": "14\" FHD IPS",
-      "estado": "Excelente",
-      "precio": 770000,
-      "precioAnterior": 870000,
-      "garantia": "30 días",
-      "badges": [
-        "oferta"
-      ],
-      "color": "#3d1040",
-      "detalles": "🪽Construcción de Aluminio Super liviano\n⌨️Teclado Retroiluminado\n🫆Lector de Huella digital\n🔋Carga Rápida",
-      "imagenes": [
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-swift-1786403432764.jpg"
-      ]
-    },
-    {
       "id": 9,
       "categoria": "tablet",
       "modelo": "IdeaTab",
