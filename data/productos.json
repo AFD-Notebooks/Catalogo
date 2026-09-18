@@ -231,6 +231,34 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g8-1789609525031-3.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g8-1789609527200-4.jpg"
       ]
+    },
+    {
+      "id": 13,
+      "categoria": "notebook",
+      "modelo": "ELITEBOOK",
+      "marca": "Hp",
+      "procesador": "Intel Core vPRO i7 1265U",
+      "ram": "32 GB DDR4",
+      "almacenamiento": "1TB SSD",
+      "pantalla": "14\" FHD IPS Antireflejo",
+      "estado": "Excelente",
+      "precio": 1120000,
+      "precioAnterior": null,
+      "garantia": "30 Días",
+      "badges": [
+        "recomendada"
+      ],
+      "color": "#f07020",
+      "detalles": "💼Gama empresarial\n🪽Estructura de Aluminio\n🫆Lector de Huella Digital\n⌨️Teclado Retroiluminado\n🔊Audio Bang and Ofulsen\n📖Apertura 180°",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-elitebook-1789694619836-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-elitebook-1789694624936-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-elitebook-1789694627543-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-elitebook-1789694630864-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-elitebook-1789694633814-5.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-elitebook-1789694637232-6.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-elitebook-1789694640086-7.jpg"
+      ]
     }
   ]
 }
