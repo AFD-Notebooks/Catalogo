@@ -200,12 +200,62 @@ function initGalleryDelegation() {
     const contactBtn = e.target.closest('.btn-contact');
     if (contactBtn) { e.preventDefault(); openWaChoice(contactBtn.dataset.waMsg || 'Hola, me interesa una notebook'); return; }
     const gallery = e.target.closest('.gallery');
-    if (!gallery) return;
-    if (e.target.closest('.gallery-prev')) { e.preventDefault(); moveGallery(gallery, -1); }
-    else if (e.target.closest('.gallery-next')) { e.preventDefault(); moveGallery(gallery, 1); }
-    else if (e.target.closest('.gallery-dot')) { e.preventDefault(); setGalleryIndex(gallery, parseInt(e.target.dataset.idx, 10)); }
+    if (gallery) {
+      if (e.target.closest('.gallery-prev')) { e.preventDefault(); moveGallery(gallery, -1); return; }
+      if (e.target.closest('.gallery-next')) { e.preventDefault(); moveGallery(gallery, 1); return; }
+      if (e.target.closest('.gallery-dot')) { e.preventDefault(); setGalleryIndex(gallery, parseInt(e.target.dataset.idx, 10)); return; }
+    }
+    // ── Tocar una foto de la tarjeta la agranda en el lightbox ──
+    const clickedImg = e.target.closest('.card-image img');
+    if (clickedImg) {
+      const cardImage = e.target.closest('.card-image');
+      const allImgs = Array.from(cardImage.querySelectorAll('img'));
+      const idx = allImgs.indexOf(clickedImg);
+      openLightbox(allImgs.map(img => img.src), idx < 0 ? 0 : idx);
+    }
   });
 }
+
+// ── LIGHTBOX: agranda la foto tocada, con flechas para recorrer las demás del mismo equipo ──
+let lightboxImgs = [];
+let lightboxIndex = 0;
+
+function renderLightbox() {
+  const imgEl = document.getElementById('lightboxImg');
+  if (imgEl) imgEl.src = lightboxImgs[lightboxIndex] || '';
+  const counter = document.getElementById('lightboxCounter');
+  if (counter) counter.textContent = lightboxImgs.length > 1 ? `${lightboxIndex + 1} / ${lightboxImgs.length}` : '';
+  const multi = lightboxImgs.length > 1;
+  document.querySelectorAll('.lightbox-arrow').forEach(btn => { btn.style.display = multi ? '' : 'none'; });
+}
+
+function openLightbox(imgs, startIndex) {
+  if (!imgs || imgs.length === 0) return;
+  lightboxImgs = imgs;
+  lightboxIndex = startIndex || 0;
+  renderLightbox();
+  document.getElementById('lightboxBackdrop')?.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightboxBackdrop')?.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function moveLightbox(dir) {
+  if (lightboxImgs.length === 0) return;
+  lightboxIndex = (lightboxIndex + dir + lightboxImgs.length) % lightboxImgs.length;
+  renderLightbox();
+}
+
+document.addEventListener('keydown', e => {
+  const backdrop = document.getElementById('lightboxBackdrop');
+  if (!backdrop || !backdrop.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  else if (e.key === 'ArrowLeft') moveLightbox(-1);
+  else if (e.key === 'ArrowRight') moveLightbox(1);
+});
 
 // ── Números de WhatsApp: se listan todos como opciones de contacto en la sección Contacto ──
 function renderWaChannels() {

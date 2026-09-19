@@ -256,6 +256,7 @@
     .card-image img {
       width: 100%; height: 100%; object-fit: cover;
       transition: transform 0.4s ease;
+      cursor: zoom-in;
     }
     .product-card:hover .card-image img { transform: scale(1.04); }
     .card-image-placeholder {
@@ -472,6 +473,47 @@
     }
     .wa-modal-close:hover { background: var(--bg3); }
     .wa-modal-list { display: flex; flex-direction: column; gap: 10px; }
+
+    /* ── LIGHTBOX (agrandar foto al tocarla) ── */
+    .lightbox-backdrop {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.9);
+      display: none; align-items: center; justify-content: center;
+      padding: 3rem 1.5rem; z-index: 600;
+    }
+    .lightbox-backdrop.open { display: flex; }
+    .lightbox-img {
+      max-width: 100%; max-height: 100%;
+      object-fit: contain; border-radius: var(--radius-sm);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 40px; height: 40px; border-radius: 50%; border: none;
+      background: rgba(255,255,255,0.12); color: #fff; font-size: 22px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background var(--transition); z-index: 2;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.24); }
+    .lightbox-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 46px; height: 46px; border-radius: 50%;
+      background: rgba(255,255,255,0.12); color: #fff; border: none;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; line-height: 1; cursor: pointer;
+      transition: background var(--transition); z-index: 2;
+    }
+    .lightbox-arrow:hover { background: rgba(255,255,255,0.24); }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+    .lightbox-counter {
+      position: absolute; bottom: 18px; left: 0; right: 0;
+      text-align: center; color: rgba(255,255,255,0.75); font-size: 13px;
+      font-family: 'DM Mono', monospace;
+    }
+    @media (max-width: 560px) {
+      .lightbox-arrow { width: 38px; height: 38px; font-size: 22px; }
+      .lightbox-backdrop { padding: 4.5rem 0.75rem; }
+    }
     .contact-card {
       background: var(--bg2); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 2rem;
