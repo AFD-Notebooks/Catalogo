@@ -3,12 +3,12 @@
     "whatsapp": [
       {
         "id": "principal",
-        "label": "Ventas",
+        "label": "Juan Cruz",
         "numero": "5493516193366"
       },
       {
         "id": "rrkkp3o",
-        "label": "Soporte Técnico",
+        "label": "Francisco",
         "numero": "5493515403265"
       },
       {
@@ -31,7 +31,7 @@
       "almacenamiento": "512 GB SSD",
       "pantalla": "14\" 2K",
       "estado": "Excelente",
-      "precio": 1000000,
+      "precio": 999999,
       "precioAnterior": 1150000,
       "garantia": "30 días",
       "badges": [
