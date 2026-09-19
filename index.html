@@ -385,6 +385,15 @@
   </div>
 </div>
 
+<!-- LIGHTBOX: al tocar una foto de un equipo, se agranda para verla mejor -->
+<div class="lightbox-backdrop" id="lightboxBackdrop" onclick="if(event.target===this) closeLightbox()">
+  <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar">×</button>
+  <button type="button" class="lightbox-arrow lightbox-prev" onclick="moveLightbox(-1)" aria-label="Foto anterior">‹</button>
+  <img id="lightboxImg" class="lightbox-img" src="" alt="" />
+  <button type="button" class="lightbox-arrow lightbox-next" onclick="moveLightbox(1)" aria-label="Foto siguiente">›</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
 <script src="assets/theme.js"></script>
 <script src="assets/catalog.js"></script>
 </body>
