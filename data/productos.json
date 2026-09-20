@@ -203,9 +203,11 @@
       "precio": 1120000,
       "precioAnterior": null,
       "garantia": "30 Días AFD - 8 meses Lenovo",
-      "badges": [],
+      "badges": [
+        "recomendada"
+      ],
       "color": "#f07020",
-      "detalles": "",
+      "detalles": "💼Equipo NUEVO, unicamente se encendió para probar su funcionamiento.\n🔋Batería al 100% con Carga Rápida\n🪽Carcasa de Aluminio\n💼Gama Emplresarial\n🦾Memoria RAM Ampliable con 1 ranura libre\n🫆 Lector de huella Digital\n🏎️ Procesador de alto rendimiento",
       "imagenes": [
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789941881523-0.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789941884584-1.jpg",
