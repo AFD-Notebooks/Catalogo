@@ -189,6 +189,34 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-elitebook-1789694637232-6.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-elitebook-1789694640086-7.jpg"
       ]
+    },
+    {
+      "id": 14,
+      "categoria": "notebook",
+      "modelo": "ThinkBook 14 G8 IRL",
+      "marca": "Lenovo",
+      "procesador": "Intel Core 5 210H",
+      "ram": "16 GB DDR5",
+      "almacenamiento": "512 GB SSD",
+      "pantalla": "14\" FHD IPS",
+      "estado": "Excelente",
+      "precio": 1100000,
+      "precioAnterior": null,
+      "garantia": "30 Días AFD - 8 meses Lenovo",
+      "badges": [],
+      "color": "#f07020",
+      "detalles": "",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789941881523-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789941884584-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789941887574-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789941889497-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789941891463-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789941894362-5.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789941897947-6.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789941900646-7.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789941902632-8.jpg"
+      ]
     }
   ]
 }
