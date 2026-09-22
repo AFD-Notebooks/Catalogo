@@ -221,6 +221,33 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789941900646-7.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1789941902632-8.jpg"
       ]
+    },
+    {
+      "id": 15,
+      "categoria": "notebook",
+      "modelo": "X515EA",
+      "marca": "ASUS",
+      "procesador": "Intel Core i7 11va Generación",
+      "ram": "12GB DDR4",
+      "almacenamiento": "512 GB SSD",
+      "pantalla": "15.6\" FHD Antireflejo",
+      "estado": "Excelente",
+      "precio": 820000,
+      "precioAnterior": null,
+      "garantia": "30 Días",
+      "badges": [
+        "recomendada"
+      ],
+      "color": "#f07020",
+      "detalles": "📦En caja con sus manuales\n📚 Paquete Office incluído\n🦾 Memoria RAM Ampliable",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-x515ea-1790117611197-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-x515ea-1790117614613-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-x515ea-1790117617953-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-x515ea-1790117620924-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-x515ea-1790117624057-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-x515ea-1790117626784-5.jpg"
+      ]
     }
   ]
 }
