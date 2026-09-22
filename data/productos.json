@@ -250,6 +250,37 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-x515ea-1790117624057-4.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-x515ea-1790117626784-5.jpg"
       ]
+    },
+    {
+      "id": 16,
+      "categoria": "tablet",
+      "modelo": "Tab M11",
+      "marca": "Lenovo",
+      "procesador": "MediaTek Helio G88",
+      "ram": "8GB",
+      "almacenamiento": "128GB",
+      "pantalla": "11\" Full hd",
+      "estado": "Excelente",
+      "precio": 450000,
+      "precioAnterior": 580000,
+      "garantia": "30 Días",
+      "badges": [
+        "recomendada",
+        "oferta"
+      ],
+      "color": "#f07020",
+      "detalles": "",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1790117949952-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1790117953292-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1790117956074-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1790117958919-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1790117961203-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1790117963223-5.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1790117965425-6.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1790117968311-7.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1790117970943-8.jpg"
+      ]
     }
   ]
 }
