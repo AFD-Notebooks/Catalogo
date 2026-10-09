@@ -197,6 +197,36 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1790117968311-7.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-tab-m11-1790117970943-8.jpg"
       ]
+    },
+    {
+      "id": 17,
+      "categoria": "notebook",
+      "modelo": "VivoBook PRO 15",
+      "marca": "ASUS",
+      "procesador": "Core ULTRA 7 155H",
+      "ram": "16 GB DDR5",
+      "almacenamiento": "1TB SSD",
+      "pantalla": "15,6´ OLED",
+      "estado": "Excelente",
+      "precio": 1200000,
+      "precioAnterior": null,
+      "garantia": "30 Días",
+      "badges": [
+        "recomendada"
+      ],
+      "color": "#f07020",
+      "detalles": "🐍 PLACA DE VIDEO: NVIDIA GeForce RTX 3050\n🪽Carcaza de Aluminio\n🔊Audio by Harman & Kardom\n⌨️ Teclado Retroiluminado\n📖 Apertura 180°",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-pro-15-1791583865264-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-pro-15-1791583869794-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-pro-15-1791583874804-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-pro-15-1791583878763-5.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-pro-15-1791583882546-6.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-pro-15-1791583885146-7.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-pro-15-1791583888449-8.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-pro-15-1791583923421-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-pro-15-1791583945244-0.jpg"
+      ]
     }
   ]
 }
