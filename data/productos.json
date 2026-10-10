@@ -226,6 +226,36 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-pro-15-1791583923421-2.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-pro-15-1791583945244-0.jpg"
       ]
+    },
+    {
+      "id": 18,
+      "categoria": "notebook",
+      "modelo": "ThinkPad T14 Gen 6",
+      "marca": "Lenovo",
+      "procesador": "Core ULTRA 7 265U",
+      "ram": "32GB DDR5",
+      "almacenamiento": "512 GB SSD",
+      "pantalla": "14\" FHD IPS",
+      "estado": "Excelente",
+      "precio": 1280000,
+      "precioAnterior": null,
+      "garantia": "30 Días",
+      "badges": [
+        "recomendada"
+      ],
+      "color": "#f07020",
+      "detalles": "La gama más alta de la línea ThinkPad con grado de resistencia militar \n🔊 Audio Dolby Studio\n⌨️Teclado Retroiluminado\n🫆Lector de Huella Digital\n📖Apertura 180°\n🪽Tapa de Aluminio\n🔋Carga Rápida\n🔓4 años de GARANTÍA OFICIAL LENOVO",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791668146584-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791668149450-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791668152194-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791668155024-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791668157243-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791668160361-5.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791668162552-6.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791668165300-7.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791668167961-8.jpg"
+      ]
     }
   ]
 }
