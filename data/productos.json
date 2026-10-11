@@ -256,6 +256,33 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791720124906-7.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791720128483-8.jpg"
       ]
+    },
+    {
+      "id": 19,
+      "categoria": "notebook",
+      "modelo": "Latitude 5420",
+      "marca": "Dell",
+      "procesador": "Intel Core vPRO i5 1145G7",
+      "ram": "16 GB DDR4",
+      "almacenamiento": "256 GB SSD",
+      "pantalla": "14\" FHD Antireflejo",
+      "estado": "Muy bueno",
+      "precio": 699999,
+      "precioAnterior": 800000,
+      "garantia": "30 Días",
+      "badges": [
+        "oferta"
+      ],
+      "color": "#f07020",
+      "detalles": "📖 Apertura 180°\n🫆Lector de Huella Digital\n⌨️ Teclado Retroiluminado\n🔋Carga Rápida",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5420-1791762077173-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5420-1791762079764-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5420-1791762081972-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5420-1791762084301-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5420-1791762087311-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5420-1791762090479-5.jpg"
+      ]
     }
   ]
 }
