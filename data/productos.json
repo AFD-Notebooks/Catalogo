@@ -283,6 +283,32 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5420-1791762087311-4.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5420-1791762090479-5.jpg"
       ]
+    },
+    {
+      "id": 20,
+      "categoria": "notebook",
+      "modelo": "Omnibook X Flip 2-en-1",
+      "marca": "Hp",
+      "procesador": "AMD Ryzen AI 5 340",
+      "ram": "16 GB DDR5",
+      "almacenamiento": "512 GB SSD",
+      "pantalla": "16\" QHD Táctil",
+      "estado": "Excelente",
+      "precio": 1199999,
+      "precioAnterior": 1600000,
+      "garantia": "30 Días",
+      "badges": [
+        "recomendada"
+      ],
+      "color": "#f07020",
+      "detalles": "Gama alta de HP ideal para diseño gráfico\n📖 Apertura 360° - convertible en Tablet\n⌨️ Teclado Retroiluminado\n🫆 Face ID\n🪽Estructura completa de Aluminio resistente a golpes\n🔊 Audio by Poly Studio\n🔋 Batería de larga duración + Carga Rápida",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-omnibook-x-flip-2-en-1-1791762787254-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-omnibook-x-flip-2-en-1-1791762791411-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-omnibook-x-flip-2-en-1-1791762794776-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-omnibook-x-flip-2-en-1-1791762797105-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-omnibook-x-flip-2-en-1-1791762800210-4.jpg"
+      ]
     }
   ]
 }
