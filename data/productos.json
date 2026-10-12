@@ -282,6 +282,35 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-omnibook-x-flip-2-en-1-1791762797105-3.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-omnibook-x-flip-2-en-1-1791762800210-4.jpg"
       ]
+    },
+    {
+      "id": 21,
+      "categoria": "notebook",
+      "modelo": "VivoBook Go 15",
+      "marca": "ASUS",
+      "procesador": "AMD Ryzen 5 5600H",
+      "ram": "8 GB DDR4",
+      "almacenamiento": "512 GB SSD",
+      "pantalla": "15.6\" FHD",
+      "estado": "Muy bueno",
+      "precio": 660000,
+      "precioAnterior": null,
+      "garantia": "30 Días",
+      "badges": [
+        "recomendada"
+      ],
+      "color": "#f07020",
+      "detalles": "⌨️ Teclado Retroiluminado\n📖 Apertura 180°\n🦾 Procesador de Alto rendimiento",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-go-15-1791808390676-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-go-15-1791808393543-5.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-go-15-1791808396694-6.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-go-15-1791808400592-7.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-go-15-1791808517904-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-go-15-1791808523076-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-go-15-1791808526429-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-go-15-1791808530231-3.jpg"
+      ]
     }
   ]
 }
