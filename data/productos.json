@@ -201,36 +201,6 @@
       ]
     },
     {
-      "id": 18,
-      "categoria": "notebook",
-      "modelo": "ThinkPad T14 Gen 6",
-      "marca": "Lenovo",
-      "procesador": "Core ULTRA 7 265U",
-      "ram": "32GB DDR5",
-      "almacenamiento": "512 GB SSD",
-      "pantalla": "14\" FHD IPS",
-      "estado": "Excelente",
-      "precio": 1320000,
-      "precioAnterior": null,
-      "garantia": "30 Días",
-      "badges": [
-        "recomendada"
-      ],
-      "color": "#f07020",
-      "detalles": "La gama más alta de la línea ThinkPad con grado de resistencia militar \n🔊 Audio Dolby Studio\n⌨️Teclado Retroiluminado\n🫆Lector de Huella Digital\n📖Apertura 180°\n🪽Tapa de Aluminio\n🔋Carga Rápida\n🔓4 años de GARANTÍA OFICIAL LENOVO",
-      "imagenes": [
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791720105711-0.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791720108858-1.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791720111522-2.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791720114109-3.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791720117524-4.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791720119850-5.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791720122397-6.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791720124906-7.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkpad-t14-gen-6-1791720128483-8.jpg"
-      ]
-    },
-    {
       "id": 19,
       "categoria": "notebook",
       "modelo": "Latitude 5420",
