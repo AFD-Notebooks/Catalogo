@@ -197,6 +197,33 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-go-15-1791810297929-6.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-vivobook-go-15-1791810301800-7.jpg"
       ]
+    },
+    {
+      "id": 22,
+      "categoria": "notebook",
+      "modelo": "Galaxy Book 3",
+      "marca": "Samsung",
+      "procesador": "Intel core i7 1355u",
+      "ram": "16 GB DDR4",
+      "almacenamiento": "512 GB SSD",
+      "pantalla": "15\" FHD IPS Antireflejo",
+      "estado": "Excelente",
+      "precio": 1150000,
+      "precioAnterior": null,
+      "garantia": "30 Días",
+      "badges": [],
+      "color": "#f07020",
+      "detalles": "🪽Chasis de Aluminio\n📦 En caja original\n🫆Lector de Huella Digital\n🔋 Carga Rápida con cargador original",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/samsung-galaxy-book-3-1792273793713-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/samsung-galaxy-book-3-1792273797852-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/samsung-galaxy-book-3-1792273801237-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/samsung-galaxy-book-3-1792273804924-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/samsung-galaxy-book-3-1792273808196-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/samsung-galaxy-book-3-1792273815041-5.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/samsung-galaxy-book-3-1792273820338-6.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/samsung-galaxy-book-3-1792273823807-7.jpg"
+      ]
     }
   ]
 }
