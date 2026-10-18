@@ -342,3 +342,40 @@ async function initCatalog() {
 }
 
 initCatalog();
+
+// ── Mural de clientes: completa la franja con las 38 fotos sin que una quede
+//    al lado ni arriba de otra igual. Cada fila arranca 13 fotos más adelante que la anterior. ──
+(function initMural() {
+  const grid = document.querySelector('.mural-grid');
+  if (!grid) return;
+  const fotos = Array.from(grid.querySelectorAll('.mural-item img')).map(img => img.getAttribute('src'));
+  const n = fotos.length;
+  if (n === 0) return;
+  // Orden mezclado fijo (siempre el mismo, para que no "salte" al recargar)
+  const orden = fotos.map((_, i) => i);
+  let semilla = 7;
+  for (let i = n - 1; i > 0; i--) {
+    semilla = (semilla * 9301 + 49297) % 233280;
+    const k = Math.floor(semilla / 233280 * (i + 1));
+    [orden[i], orden[k]] = [orden[k], orden[i]];
+  }
+  let ultimo = '';
+  function armar() {
+    const columnas = getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length || 1;
+    const filas = parseInt(getComputedStyle(grid.parentElement).getPropertyValue('--rows'), 10) || 4;
+    const clave = columnas + 'x' + filas;
+    if (clave === ultimo) return;
+    ultimo = clave;
+    let html = '';
+    for (let f = 0; f < filas; f++) {
+      for (let c = 0; c < columnas; c++) {
+        const src = fotos[orden[(f * 13 + c) % n]];
+        html += `<div class="mural-item"><img src="${src}" alt="" width="150" height="200" /></div>`;
+      }
+    }
+    grid.innerHTML = html;
+  }
+  armar();
+  let t;
+  window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(armar, 150); });
+})();
