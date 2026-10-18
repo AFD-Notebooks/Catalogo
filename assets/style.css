@@ -407,23 +407,51 @@
     .step-title { font-size: 15px; font-weight: 500; margin-bottom: 0.5rem; }
     .step-text { font-size: 13px; color: var(--text2); line-height: 1.7; }
 
-    /* ── TESTIMONIALS ── */
-    .testi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
-    .testi-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.5rem;
+    /* ── MURAL DE CLIENTES (franja de fotos chiquitas con el agradecimiento encima) ── */
+    .mural-section { padding: 0 0 5rem; }
+    .mural-header { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
+    .mural {
+      position: relative; overflow: hidden;
+      --tile-h: 60px; --rows: 4; --gap: 4px;
+      height: calc(var(--tile-h) * var(--rows) + var(--gap) * (var(--rows) - 1));
     }
-    .testi-stars { color: var(--gold); font-size: 14px; margin-bottom: 0.75rem; letter-spacing: 2px; }
-    .testi-text { font-size: 14px; color: var(--text2); line-height: 1.75; margin-bottom: 1rem; font-style: italic; }
-    .testi-author { display: flex; align-items: center; gap: 10px; }
-    .testi-avatar {
-      width: 34px; height: 34px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 13px; font-weight: 600; color: #fff;
+    .mural-grid {
+      display: grid; gap: var(--gap);
+      grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+      grid-auto-rows: var(--tile-h);
     }
-    .testi-name { font-size: 13px; font-weight: 500; }
-    .testi-city { font-size: 11px; color: var(--text3); }
+    .mural-item { background: var(--bg3); border-radius: 4px; overflow: hidden; }
+    .mural-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: saturate(0.85) brightness(0.8);
+    }
+    /* Velo oscuro: más denso en el centro para que el texto se lea, y fundido en los bordes */
+    .mural::before {
+      content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background:
+        radial-gradient(ellipse 45% 70% at 50% 50%, rgba(0,0,0,0.5), transparent 100%),
+        linear-gradient(90deg, var(--bg) 0%, transparent 6%, transparent 94%, var(--bg) 100%);
+    }
+    .mural-banner {
+      position: absolute; z-index: 2; inset: 0;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 0 1rem; pointer-events: none;
+    }
+    .mural-banner-title {
+      font-size: clamp(2rem, 5vw, 4rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em;
+      color: #fff;
+      -webkit-text-stroke: 6px var(--accent); paint-order: stroke fill;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.55);
+    }
+    .mural-banner-title strong { font-weight: 700; }
+    @media (max-width: 560px) {
+      .mural-section { padding-bottom: 3.5rem; }
+      .mural-header { padding: 0 1.25rem; }
+      .mural { --tile-h: 46px; --rows: 5; --gap: 3px; }
+      .mural-grid { grid-template-columns: repeat(auto-fill, minmax(34px, 1fr)); }
+      .mural-banner-title { -webkit-text-stroke-width: 4px; }
+      .mural-banner-title strong { display: block; }
+    }
 
     /* ── CONTACT ── */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
