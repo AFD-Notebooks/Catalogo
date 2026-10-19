@@ -224,6 +224,33 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/samsung-galaxy-book-3-1792273820338-6.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/samsung-galaxy-book-3-1792273823807-7.jpg"
       ]
+    },
+    {
+      "id": 23,
+      "categoria": "notebook",
+      "modelo": "ASPIRE Go 15",
+      "marca": "Acer",
+      "procesador": "Intel Core i3 N305",
+      "ram": "8GB DDR5",
+      "almacenamiento": "120 GB SSD",
+      "pantalla": "15\" FullHD Antireflex",
+      "estado": "Muy bueno",
+      "precio": 550000,
+      "precioAnterior": null,
+      "garantia": "30 Días",
+      "badges": [],
+      "color": "#f07020",
+      "detalles": "",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-go-15-1792370295647-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-go-15-1792370300350-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-go-15-1792370303395-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-go-15-1792370306303-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-go-15-1792370309368-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-go-15-1792370313481-5.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-go-15-1792370317770-6.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-go-15-1792370320971-7.jpg"
+      ]
     }
   ]
 }
