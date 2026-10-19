@@ -251,6 +251,34 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-go-15-1792370317770-6.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/acer-aspire-go-15-1792370320971-7.jpg"
       ]
+    },
+    {
+      "id": 24,
+      "categoria": "notebook",
+      "modelo": "250 G9",
+      "marca": "Hp",
+      "procesador": "Intel Core i5 1235U",
+      "ram": "8 GB DDR4",
+      "almacenamiento": "512 GB SSD",
+      "pantalla": "15\" HD Antireflex",
+      "estado": "Muy bueno",
+      "precio": 630000,
+      "precioAnterior": null,
+      "garantia": "30 Días",
+      "badges": [
+        "recomendada"
+      ],
+      "color": "#f07020",
+      "detalles": "",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g9-1792370498901-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g9-1792370502086-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g9-1792370504916-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g9-1792370507921-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g9-1792370510667-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g9-1792370514792-5.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g9-1792370518771-6.jpg"
+      ]
     }
   ]
 }
