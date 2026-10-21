@@ -147,11 +147,12 @@
       "almacenamiento": "512 GB SSD",
       "pantalla": "15.6\" FHD",
       "estado": "Muy bueno",
-      "precio": 670000,
-      "precioAnterior": null,
+      "precio": 660000,
+      "precioAnterior": 740000,
       "garantia": "30 Días",
       "badges": [
-        "recomendada"
+        "recomendada",
+        "oferta"
       ],
       "color": "#f07020",
       "detalles": "⌨️ Teclado Retroiluminado\n📖 Apertura 180°\n🦾 Procesador de Alto rendimiento",
