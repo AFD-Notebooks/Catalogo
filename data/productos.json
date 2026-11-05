@@ -132,6 +132,32 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g9-1792370514792-5.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-250-g9-1792370518771-6.jpg"
       ]
+    },
+    {
+      "id": 25,
+      "categoria": "notebook",
+      "modelo": "ZenBook 14",
+      "marca": "ASUS",
+      "procesador": "AMD Ryzen 5 7530U",
+      "ram": "16 GB DDR4",
+      "almacenamiento": "512 GB SSD",
+      "pantalla": "14\" FHD IPS Antireflejo",
+      "estado": "Excelente",
+      "precio": 1070000,
+      "precioAnterior": 1250000,
+      "garantia": "30 Días",
+      "badges": [
+        "recomendada"
+      ],
+      "color": "#f07020",
+      "detalles": "💼Funda original de la línea de regalo\n🔋Carga rápida y batería de larga duración\n🔊Audio by Harman y Kardom\n🔌Cargador Original USBC\n🪽Chasis de Aluminio\n📖Apertura 180°\n🫆Lector de Huella Digital\n⌨️Teclado retroiluminado + Numérico en el PAD",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-zenbook-14-1793845011535-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-zenbook-14-1793845015003-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-zenbook-14-1793845017857-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-zenbook-14-1793845020647-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-zenbook-14-1793845024021-4.jpg"
+      ]
     }
   ]
 }
