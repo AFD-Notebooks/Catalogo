@@ -22,37 +22,6 @@
   },
   "productos": [
     {
-      "id": 11,
-      "categoria": "notebook",
-      "modelo": "ThinkBook 14 G8 IRL",
-      "marca": "Lenovo",
-      "procesador": "Intel Core 5 210H",
-      "ram": "16 GB DDR5",
-      "almacenamiento": "512 GB SSD",
-      "pantalla": "14\" FHD IPS",
-      "estado": "Excelente",
-      "precio": 1100000,
-      "precioAnterior": 1300000,
-      "garantia": "30 Días AFD - 8 meses Lenovo",
-      "badges": [
-        "recomendada"
-      ],
-      "color": "#f07020",
-      "detalles": "💼Equipo NUEVO, unicamente se encendió para probar su funcionamiento.\n🔋Batería al 100% con Carga Rápida\n🪽Carcasa de Aluminio\n💼Gama Emplresarial\n🦾Memoria RAM Ampliable con 1 ranura libre\n🫆 Lector de huella Digital\n🏎️ Procesador de alto rendimiento",
-      "imagenes": [
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1790117190682-1.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1790117338692-0.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1790117341927-1.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1790117344670-2.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1790117347951-3.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1790117350122-4.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1790117351972-5.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1790117354060-6.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1790117357084-7.jpg",
-        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-thinkbook-14-g8-irl-1790117359534-8.jpg"
-      ]
-    },
-    {
       "id": 21,
       "categoria": "notebook",
       "modelo": "VivoBook Go 15",
