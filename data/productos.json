@@ -182,6 +182,29 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-laptop-15-1793845384327-3.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-laptop-15-1793845388683-4.jpg"
       ]
+    },
+    {
+      "id": 27,
+      "categoria": "notebook",
+      "modelo": "IdeaPad Slim 3",
+      "marca": "Lenovo",
+      "procesador": "AMD Ryzen 7 5825u",
+      "ram": "16 GB DDR4",
+      "almacenamiento": "512 GB SSD",
+      "pantalla": "15\" FullHD TÁCTIL",
+      "estado": "Excelente",
+      "precio": 999999,
+      "precioAnterior": 1150000,
+      "garantia": "30 Días",
+      "badges": [],
+      "color": "#f07020",
+      "detalles": "🔋100% Condición de batería - Carga rápida\n🔌 Cargador original\n 🖥️ Pantalla Táctil",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1793846483848-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1793846487052-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1793846489781-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1793846494144-3.jpg"
+      ]
     }
   ]
 }
