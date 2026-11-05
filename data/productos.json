@@ -158,6 +158,30 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-zenbook-14-1793845020647-3.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/asus-zenbook-14-1793845024021-4.jpg"
       ]
+    },
+    {
+      "id": 26,
+      "categoria": "notebook",
+      "modelo": "Laptop 15",
+      "marca": "Hp",
+      "procesador": "AMD Ryzen 7 7730u",
+      "ram": "16 GB DDR4",
+      "almacenamiento": "512 GB SSD",
+      "pantalla": "15.6\" FHD TÁCTIL",
+      "estado": "Excelente",
+      "precio": 1100000,
+      "precioAnterior": null,
+      "garantia": "30 Días",
+      "badges": [],
+      "color": "#f07020",
+      "detalles": "🦾 Garantía oficial HP hasta Abril 2027\n 🖥️ Pantalla Táctil",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-laptop-15-1793845370227-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-laptop-15-1793845375127-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-laptop-15-1793845380520-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-laptop-15-1793845384327-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/hp-laptop-15-1793845388683-4.jpg"
+      ]
     }
   ]
 }
