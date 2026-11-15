@@ -206,6 +206,33 @@
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1793914607355-3.jpg",
         "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/lenovo-ideapad-slim-3-1793914614594-4.jpg"
       ]
+    },
+    {
+      "id": 28,
+      "categoria": "notebook",
+      "modelo": "Latitude 5330",
+      "marca": "Dell",
+      "procesador": "Intel Core i7 1265u",
+      "ram": "32 GB DDR4",
+      "almacenamiento": "512 GB SSD",
+      "pantalla": "14\" FHD TÁCTIL",
+      "estado": "Excelente",
+      "precio": 1130000,
+      "precioAnterior": null,
+      "garantia": "30 Días",
+      "badges": [],
+      "color": "#f07020",
+      "detalles": "🫆Lector de Huella digital\n⌨️Teclado retroiluminado\n🖥️Pantalla táctil\n📖Revatible en 360°\n🔌Cargador USB-C de carga rápida\n💼Gama empresarial",
+      "imagenes": [
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5330-1794780614737-0.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5330-1794780622517-1.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5330-1794780627694-2.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5330-1794780633087-3.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5330-1794780638456-4.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5330-1794780645607-5.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5330-1794780650882-6.jpg",
+        "https://raw.githubusercontent.com/AFD-Notebooks/Catalogo/main/images/dell-latitude-5330-1794780654577-7.jpg"
+      ]
     }
   ]
 }
